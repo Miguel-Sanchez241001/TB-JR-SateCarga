@@ -1,0 +1,54 @@
+package pe.com.bn.util;
+
+import pe.com.bn.Enum.Bnsate12RptaMcTemp;
+import pe.com.bn.Enum.Bnsate13RptaMefTemp;
+import pe.com.bn.Enum.TableType;
+
+public class QueryUtil {
+
+    /**
+     * Genera una consulta SQL de inserción para la tabla especificada.
+     * @param tableType El tipo de tabla (definido en TableType enum).
+     * @return La consulta SQL de inserción.
+     */
+    public static String generateInsertQuery(TableType tableType) {
+        StringBuilder sql = new StringBuilder();
+        StringBuilder columns = new StringBuilder();
+        StringBuilder placeholders = new StringBuilder();
+
+        // Dependiendo del tipo de tabla, obtenemos los nombres de columna correspondientes
+        switch (tableType) {
+            case RPTA_MC_TEMP: // Para la tabla BNSATE12_RPTA_MC_TEMP
+                sql.append("INSERT INTO ").append(tableType.getTableName()).append(" (");
+
+                for (Bnsate12RptaMcTemp field : Bnsate12RptaMcTemp.values()) {
+                    columns.append(field.getColumnName()).append(", ");
+                    placeholders.append("?, ");
+                }
+                break;
+
+            case RPTA_MEF_TEMP: // Para la tabla BNSATE13_RPTA_MEF_TEMP
+                sql.append("INSERT INTO ").append(tableType.getTableName()).append(" (");
+
+                for (Bnsate13RptaMefTemp field : Bnsate13RptaMefTemp.values()) {
+                    columns.append(field.getColumnName()).append(", ");
+                    placeholders.append("?, ");
+                }
+                break;
+
+            default:
+                throw new IllegalArgumentException("Tipo de tabla no soportado: " + tableType);
+        }
+
+        // Eliminar la última coma y espacio extra
+        if (columns.length() > 0) {
+            columns.setLength(columns.length() - 2);
+            placeholders.setLength(placeholders.length() - 2);
+        }
+
+        // Construye la consulta completa
+        sql.append(columns).append(") VALUES (").append(placeholders).append(")");
+
+        return sql.toString();
+    }
+}
