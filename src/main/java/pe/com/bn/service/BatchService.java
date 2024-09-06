@@ -3,13 +3,17 @@ package pe.com.bn.service;
 import pe.com.bn.Enum.Bnsate13RptaMefTemp;
 import pe.com.bn.Enum.TableType;
 import pe.com.bn.dto.DtoLoteMEF;
+import pe.com.bn.util.QueryUtil;
+
+import java.sql.Date;
+import java.text.ParseException;
 
 public class BatchService {
     public String getLote(String line, String typeProcess) {
         return null;
     }
 
-    public DtoLoteMEF saveLoteMef(String line, String typeProcess) {
+    public DtoLoteMEF saveLoteMef(String line, String typeProcess) throws ParseException {
         // Verifica si el tipo de proceso coincide
         if (typeProcess.equals(TableType.RPTA_MEF_TEMP.getTableNumber())) {
             DtoLoteMEF dtoLoteMEF = new DtoLoteMEF();
@@ -43,10 +47,10 @@ public class BatchService {
                         dtoLoteMEF.setNumTarjetaAut(fieldValue);
                         break;
                     case B13_FEC_INICIO_AUT:
-                        dtoLoteMEF.setFecInicioAut(fieldValue);
+                        dtoLoteMEF.setFecInicioAut(QueryUtil.convertStringToSqlDate(fieldValue));
                         break;
                     case B13_FEC_FIN_AUT:
-                        dtoLoteMEF.setFecFinAut(fieldValue);
+                        dtoLoteMEF.setFecFinAut(QueryUtil.convertStringToSqlDate(fieldValue));
                         break;
                     case B13_IMPORTE:
                         dtoLoteMEF.setImporte(fieldValue);
@@ -55,7 +59,7 @@ public class BatchService {
                         dtoLoteMEF.setSecOperacionRef(fieldValue);
                         break;
                     case B13_FECHA_REGISTRO:
-                        dtoLoteMEF.setFechaRegistro(fieldValue);
+                        dtoLoteMEF.setFechaRegistro(new Date(System.currentTimeMillis()));
                         break;
                     default:
                         // Manejo de cualquier caso inesperado

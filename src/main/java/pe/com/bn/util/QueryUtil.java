@@ -4,6 +4,10 @@ import pe.com.bn.Enum.Bnsate12RptaMcTemp;
 import pe.com.bn.Enum.Bnsate13RptaMefTemp;
 import pe.com.bn.Enum.TableType;
 
+import java.sql.Date;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+
 public class QueryUtil {
 
     /**
@@ -50,5 +54,14 @@ public class QueryUtil {
         sql.append(columns).append(") VALUES (").append(placeholders).append(")");
 
         return sql.toString();
+    }
+    public static Date convertStringToSqlDate(String dateStr) throws ParseException {
+        // Define el formato de la fecha
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd");
+        sdf.setLenient(false); // Asegúrate de que la fecha sea estrictamente valida
+        // Convierte la cadena de fecha a java.util.Date
+        java.util.Date date = sdf.parse(dateStr);
+        // Convierte java.util.Date a java.sql.Date
+        return new java.sql.Date(date.getTime());
     }
 }
