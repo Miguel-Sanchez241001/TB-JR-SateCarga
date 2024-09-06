@@ -42,6 +42,7 @@ public class LoteService {
                 // Extrae los valores del DTO para usarlos como parámetros
                 Object[] params = {
                         dtoLoteMEF.getSecOperacion(),
+                        dtoLoteMEF.getSecOperacionRef(),
                         dtoLoteMEF.getTipoOperacion(),
                         dtoLoteMEF.getCuentaCargo(),
                         dtoLoteMEF.getTipoDocumento(),
@@ -51,7 +52,6 @@ public class LoteService {
                         dtoLoteMEF.getFecInicioAut(),
                         dtoLoteMEF.getFecFinAut(),
                         dtoLoteMEF.getImporte(),
-                        dtoLoteMEF.getSecOperacionRef(),
                         dtoLoteMEF.getFechaRegistro()
                 };
                //aqui  dbUtil.insert(dtoLoteMEF);
