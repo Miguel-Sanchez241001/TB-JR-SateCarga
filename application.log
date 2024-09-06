@@ -1,0 +1,1 @@
+2024-09-05 12:14:12,793 ERROR pe.com.bn.Main.MainProcess  - Número insuficiente de argumentos. Se requieren 4 argumentos: <urlConection> <pathFile> <pathLog> <typeProcess>
