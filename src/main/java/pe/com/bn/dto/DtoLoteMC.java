@@ -4,6 +4,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.sql.Date;
+
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -14,13 +16,13 @@ public class DtoLoteMC {
     private String apellidos;
     private String nombre;
     private String numCuenta;
-    private String fecApeCta;
+    private Date fecApeCta;
     private String blq1Cta;
     private String blq2Cta;
     private String numTarj;
-    private String fecApeTarj;
+    private Date fecApeTarj;
     private String blq1Tarj;
-    private String fecVencTarj;
+    private Date fecVencTarj;
     private String codProd;
     private String linCred;
     private String tipoResp;
@@ -28,8 +30,23 @@ public class DtoLoteMC {
     private String motBlq;
     private String cel;
     private String email;
-    private String fecReg;
+    private Date fecReg;
     private String codAsig;
-    private String fecIniLin;
-    private String fecFinLin;
+    private Date fecIniLin;
+    private Date fecFinLin;
+
+    @Override
+    public String toString() {
+        return "DtoLoteMC{" +
+                "numTarj='" + numTarj + '\'' +
+                ", fecVencTarj=" + fecVencTarj +
+                ", fecApeTarj=" + fecApeTarj +
+                ", apellidos='" + apellidos + '\'' +
+                ", nombre='" + nombre + '\'' +
+                ", numDoc='" + numDoc + '\'' +
+                ", codProd='" + codProd + '\'' +
+                ", tipoDoc='" + tipoDoc + '\'' +
+                ", fecReg=" + fecReg +
+                '}';
+    }
 }

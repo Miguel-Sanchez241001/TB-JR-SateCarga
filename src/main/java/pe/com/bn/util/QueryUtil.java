@@ -25,7 +25,7 @@ public class QueryUtil {
             case RPTA_MC_TEMP: // Para la tabla BNSATE12_RPTA_MC_TEMP
                 sql.append("INSERT INTO ").append(tableType.getTableName()).append(" (");
 
-                for (Bnsate12RptaMcTemp field : Bnsate12RptaMcTemp.values()) {
+                for (Bnsate12RptaMcTemp field : Bnsate12RptaMcTemp.getFitarQuery()) {
                     columns.append(field.getColumnName()).append(", ");
                     placeholders.append("?, ");
                 }

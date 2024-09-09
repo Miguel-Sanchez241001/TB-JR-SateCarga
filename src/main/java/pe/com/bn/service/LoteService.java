@@ -3,6 +3,7 @@ package pe.com.bn.service;
 import org.apache.log4j.Logger;
 import pe.com.bn.Enum.TableType;
 import pe.com.bn.customexception.ProcessException;
+import pe.com.bn.dto.DtoLoteMC;
 import pe.com.bn.dto.DtoLoteMEF;
 import pe.com.bn.model.InputParametros;
 import pe.com.bn.util.DbUtil;
@@ -37,25 +38,63 @@ public class LoteService {
             }
             // Genera la consulta de inserción para la tabla correspondiente
             String sql = QueryUtil.generateInsertQuery(tableType);
+            log.info("INSERT: "+ sql.toString());
+
             while ((line = br.readLine()) != null) {
-                DtoLoteMEF dtoLoteMEF = this.batchService.saveLoteMef(line,input.getTypeProcess());
-                // Extrae los valores del DTO para usarlos como parámetros
-                Object[] params = {
-                        dtoLoteMEF.getSecOperacion(),
-                        dtoLoteMEF.getSecOperacionRef(),
-                        dtoLoteMEF.getTipoOperacion(),
-                        dtoLoteMEF.getCuentaCargo(),
-                        dtoLoteMEF.getTipoDocumento(),
-                        dtoLoteMEF.getNumDocumento(),
-                        dtoLoteMEF.getFecInicioAut(),
-                        dtoLoteMEF.getFecFinAut(),
-                        dtoLoteMEF.getImporte(),
-                        dtoLoteMEF.getFechaRegistro()
-                };
-               //aqui  dbUtil.insert(dtoLoteMEF);
-                log.info("DtoLoteMEF: "+ dtoLoteMEF.toString());
-               // int rowsAffected = dbUtil.insert(sql, params);
-               // log.info("Filas insertadas: {}" + rowsAffected);
+                Object dtoGenerci = this.batchService.saveLote(line,input.getTypeProcess());
+                Object[] params;
+                if (TableType.RPTA_MEF_TEMP.equals(tableType)) {
+                    // Extrae los valores del DTO para usarlos como parámetros
+                    DtoLoteMEF dtoLoteMEF = (DtoLoteMEF) dtoGenerci;
+                    params = new Object[]{
+                            dtoLoteMEF.getSecOperacion(),        // B13_SEC_OPERACION
+                            dtoLoteMEF.getTipoOperacion(),       // B13_TIPO_OPERACION
+                            dtoLoteMEF.getRucMefTemp(),          // B13_RUC_MEF_TEMP
+                            dtoLoteMEF.getCuentaCargo(),         // B13_CUENTA_CARGO
+                            dtoLoteMEF.getFecInicioAut(),        // B13_FEC_INICIO_AUT
+                            dtoLoteMEF.getFecFinAut(),           // B13_FEC_FIN_AUT
+                            dtoLoteMEF.getTipoTarjeta(),         // B13_TIPO_TARJETA
+                            dtoLoteMEF.getMoneda(),              // B13_MONEDA
+                            dtoLoteMEF.getImporte(),             // B13_IMPORTE
+                            dtoLoteMEF.getTipoDocumento(),       // B13_TIPO_DOCUMENTO
+                            dtoLoteMEF.getNumDocumento(),        // B13_NUM_DOCUMENTO
+                            dtoLoteMEF.getFechaRegistro()        // B13_FECHA_REGISTRO (Fecha actual)
+                    };
+                    //aqui  dbUtil.insert(dtoLoteMEF);
+                    log.info("DtoLoteMEF: "+ dtoLoteMEF.toString());
+
+
+                }
+                else{
+                    // Extrae los valores del DTO para usarlos como parámetros
+                    DtoLoteMC dtoLoteMC = (DtoLoteMC) dtoGenerci;
+                    params = new Object[]{
+                            dtoLoteMC.getTipoDoc(),
+                            dtoLoteMC.getNumDoc(),
+                            dtoLoteMC.getApellidos(),
+                            dtoLoteMC.getNombre(),
+                            dtoLoteMC.getFecReg(),
+                            dtoLoteMC.getCodProd(),
+                            dtoLoteMC.getNumTarj(),
+                            dtoLoteMC.getFecApeTarj(),
+                            dtoLoteMC.getFecVencTarj(),
+                            dtoLoteMC.getTipoResp()
+                    };
+                    //aqui  dbUtil.insert(dtoLoteMEF);
+                    log.info("dtoLoteMC: "+ dtoLoteMC.toString());
+                }
+
+
+
+
+
+
+
+
+
+
+                int rowsAffected = dbUtil.insert(sql, params);
+                log.info("Filas insertadas: {}" + rowsAffected);
             }
         } catch (Exception e) {
             log.error("ERROR: {}"+ e.getMessage());
