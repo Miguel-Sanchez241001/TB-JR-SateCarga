@@ -55,9 +55,9 @@ public class LoteService {
                         dtoLoteMEF.getFechaRegistro()
                 };
                //aqui  dbUtil.insert(dtoLoteMEF);
-                log.info("DtoLoteMEF: {}"+ dtoLoteMEF.toString());
-                int rowsAffected = dbUtil.insert(sql, params);
-                log.info("Filas insertadas: {}" + rowsAffected);
+                log.info("DtoLoteMEF: "+ dtoLoteMEF.toString());
+               // int rowsAffected = dbUtil.insert(sql, params);
+               // log.info("Filas insertadas: {}" + rowsAffected);
             }
         } catch (Exception e) {
             log.error("ERROR: {}"+ e.getMessage());
