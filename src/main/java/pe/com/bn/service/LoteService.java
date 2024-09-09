@@ -47,8 +47,6 @@ public class LoteService {
                         dtoLoteMEF.getCuentaCargo(),
                         dtoLoteMEF.getTipoDocumento(),
                         dtoLoteMEF.getNumDocumento(),
-                        dtoLoteMEF.getNombreBeneficiario(),
-                        dtoLoteMEF.getNumTarjetaAut(),
                         dtoLoteMEF.getFecInicioAut(),
                         dtoLoteMEF.getFecFinAut(),
                         dtoLoteMEF.getImporte(),

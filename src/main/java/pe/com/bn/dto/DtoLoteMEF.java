@@ -8,6 +8,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.math.BigDecimal;
 import java.sql.Date;
 
 @Data
@@ -19,12 +20,13 @@ public class DtoLoteMEF {
     private String cuentaCargo;
     private String tipoDocumento;
     private String numDocumento;
-    private String nombreBeneficiario;
-    private String numTarjetaAut;
     private Date fecInicioAut;
     private Date fecFinAut;
-    private String importe;
+    private BigDecimal importe;        // Cambiado a BigDecimal para manejar montos correctamente
     private String secOperacionRef;
-    private Date fechaRegistro;  // Se mantiene como String para usar "SYSDATE"
-
+    private Date fechaRegistro;        // Se mantiene como Date para usar "SYSDATE"
+    private String rucMefTemp;         // Se agregó el campo RUC
+    private String tipoTarjeta;
+    private String moneda;
 }
+

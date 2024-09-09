@@ -5,6 +5,7 @@ import pe.com.bn.Enum.TableType;
 import pe.com.bn.dto.DtoLoteMEF;
 import pe.com.bn.util.QueryUtil;
 
+import java.math.BigDecimal;
 import java.sql.Date;
 import java.text.ParseException;
 
@@ -18,18 +19,18 @@ public class BatchService {
         if (typeProcess.equals(TableType.RPTA_MEF_TEMP.getTableNumber())) {
             DtoLoteMEF dtoLoteMEF = new DtoLoteMEF();
 
-            // Itera sobre cada campo del enum para extraer su valor
             for (Bnsate13RptaMefTemp field : Bnsate13RptaMefTemp.values()) {
-                // Obtiene el valor del campo usando los índices de inicio y fin
                 String fieldValue = line.substring(field.getStart(), field.getEnd()).trim();
 
-                // Asigna el valor extraído al campo correspondiente del DTO
                 switch (field) {
                     case B13_SEC_OPERACION:
                         dtoLoteMEF.setSecOperacion(fieldValue);
                         break;
                     case B13_TIPO_OPERACION:
                         dtoLoteMEF.setTipoOperacion(fieldValue);
+                        break;
+                    case B13_RUC_MEF_TEMP:
+                        dtoLoteMEF.setRucMefTemp(fieldValue); // Asigna el RUC
                         break;
                     case B13_CUENTA_CARGO:
                         dtoLoteMEF.setCuentaCargo(fieldValue);
@@ -40,12 +41,6 @@ public class BatchService {
                     case B13_NUM_DOCUMENTO:
                         dtoLoteMEF.setNumDocumento(fieldValue);
                         break;
-                    case B13_NOMBRE_BENEFICIARIO:
-                        dtoLoteMEF.setNombreBeneficiario(fieldValue);
-                        break;
-                    case B13_NUM_TARJETA_AUT:
-                        dtoLoteMEF.setNumTarjetaAut(fieldValue);
-                        break;
                     case B13_FEC_INICIO_AUT:
                         dtoLoteMEF.setFecInicioAut(QueryUtil.convertStringToSqlDate(fieldValue));
                         break;
@@ -53,16 +48,18 @@ public class BatchService {
                         dtoLoteMEF.setFecFinAut(QueryUtil.convertStringToSqlDate(fieldValue));
                         break;
                     case B13_IMPORTE:
-                        dtoLoteMEF.setImporte(fieldValue);
+                        dtoLoteMEF.setImporte(new BigDecimal(fieldValue)); // Convierte el valor a BigDecimal
                         break;
-                    case B13_SEC_OPERACION_REF:
-                        dtoLoteMEF.setSecOperacionRef(fieldValue);
+                    case B13_TIPO_TARJETA:
+                        dtoLoteMEF.setTipoTarjeta(fieldValue);
+                        break;
+                    case B13_MONEDA:
+                        dtoLoteMEF.setMoneda(fieldValue);
                         break;
                     case B13_FECHA_REGISTRO:
-                        dtoLoteMEF.setFechaRegistro(new Date(System.currentTimeMillis()));
+                        dtoLoteMEF.setFechaRegistro(new Date(System.currentTimeMillis())); // Establece la fecha actual
                         break;
                     default:
-                        // Manejo de cualquier caso inesperado
                         throw new IllegalArgumentException("Campo inesperado: " + field);
                 }
             }
