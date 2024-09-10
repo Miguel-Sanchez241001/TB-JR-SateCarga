@@ -34,6 +34,7 @@ public class DtoLoteMC {
     private String codAsig;
     private Date fecIniLin;
     private Date fecFinLin;
+    private String codEntidad;
 
     @Override
     public String toString() {
@@ -46,6 +47,7 @@ public class DtoLoteMC {
                 ", numDoc='" + numDoc + '\'' +
                 ", codProd='" + codProd + '\'' +
                 ", tipoDoc='" + tipoDoc + '\'' +
+                ", codEntidad='" + codEntidad + '\'' +
                 ", fecReg=" + fecReg +
                 '}';
     }

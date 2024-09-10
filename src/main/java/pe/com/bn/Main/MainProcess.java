@@ -4,7 +4,8 @@ import org.apache.log4j.Logger;
 import pe.com.bn.config.log.LogConfig;
 import pe.com.bn.model.InputParametros;
 import pe.com.bn.service.LoteService;
-import pe.com.bn.util.DbUtil;
+
+import java.io.*;
 
 /**
  * User: Miguel Sanchez
@@ -16,8 +17,11 @@ public class MainProcess {
 
     public static void main(String... args)  {
 
-        if (args.length < 4) {
-            log.error("Número insuficiente de argumentos. Se requieren 4 argumentos: <urlConection> <pathFile> <pathLog> <typeProcess>");
+        if (args.length < 5) {
+            log.error("Número insuficiente de argumentos. Se requieren 4 argumentos:" +
+                    " <urlConection>" +
+                    " <pathFile> <pathLog> " +
+                    "<typeProcess> <typeProcessMC> ");
             System.out.println("FAILED");
             System.exit(1); // Salida con código 1 indicando error
         }
@@ -26,6 +30,7 @@ public class MainProcess {
         inputParameter.setPathFile(args[1]);
         inputParameter.setPathLog(args[2]);
         inputParameter.setTypeProcess(args[3]);
+        inputParameter.setTypeProcessMC(args[4]);
         LoteService service = new LoteService();
         try {
             LogConfig.configureLogFile(inputParameter.getPathLog());
@@ -41,5 +46,39 @@ public class MainProcess {
             System.out.println("FAILED"); // Imprimir FAILED si ocurrió un error
             System.exit(1); // Salida con código 1 indicando error
         }
-    }
+//        try (
+//                BufferedReader reader = new BufferedReader(new FileReader(args[1]));
+//                BufferedWriter writer = new BufferedWriter(new FileWriter(args[2]))
+//        ) {
+//            String linea = reader.readLine(); // Leer la primera línea
+//
+//            // Mientras haya líneas en el archivo
+//            while (linea != null) {
+//                // Pasar la línea al método que valida
+//
+//                // Escribir la línea en el archivo de salida
+//                writer.write(cumpleCondicion(linea));
+//                writer.newLine();
+//
+//                // Leer la siguiente línea
+//                linea = reader.readLine();
+//            }
+//
+//            System.out.println("Archivo modificado correctamente.");
+//        } catch (IOException e) {
+//            System.err.println("Error al procesar el archivo: " + e.getMessage());
+//        }
+//
+//    }
+
+//    private static String cumpleCondicion(String linea) {
+//        if (linea.contains("15743653") || linea.contains("10135089") || linea.contains("16727214")){
+//            return linea + "6001";
+//        }else{
+//            return linea + "9999";
+//        }
+//
+//
+//
+   }
 }
