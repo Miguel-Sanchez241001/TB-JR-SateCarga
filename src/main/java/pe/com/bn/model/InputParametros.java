@@ -14,4 +14,5 @@ public class InputParametros {
     private String pathFile;
     private String pathLog;
     private String typeProcess;
+    private String typeProcessMC;
 }

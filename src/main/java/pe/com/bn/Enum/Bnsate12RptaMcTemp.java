@@ -21,6 +21,8 @@ public enum Bnsate12RptaMcTemp {
     FEC_REG("B12_FECHA_REGISTRO", 1, 2, true),
     COD_PROD("B12_CODIGO_PRODUCTO", 3, 6, true),
     TIPO_RESP("B12_TIPO_RESPUESTA", 2, 2, true),
+    COD_UNIDAD("B12_COD_INTERNO_TEMP", 2, 2, true),
+
     BLQ1_TARJ("B12_BLOQUEO_1_TARJETA", 140, 150, true),
 
 
@@ -83,6 +85,7 @@ public enum Bnsate12RptaMcTemp {
         mcFitar.add(FEC_APE_TARJ);
         mcFitar.add(FEC_VENC_TARJ);
         mcFitar.add(TIPO_RESP);
+        mcFitar.add(COD_UNIDAD);
         return mcFitar;
     }
 

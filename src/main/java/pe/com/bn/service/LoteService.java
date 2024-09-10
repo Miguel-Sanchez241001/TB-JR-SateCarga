@@ -26,7 +26,9 @@ public class LoteService {
         DbUtil dbUtil = DbUtil.getInstance(input.getUrlConection());
         try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
             // Omitir la primera línea
-            String line = br.readLine(); // Lee y descarta la primera línea
+            String line = br.readLine();
+
+
             // Determina el tipo de tabla basado en el tipo de proceso
             TableType tableType;
             if ("1".equals(input.getTypeProcess())) {
@@ -38,10 +40,10 @@ public class LoteService {
             }
             // Genera la consulta de inserción para la tabla correspondiente
             String sql = QueryUtil.generateInsertQuery(tableType);
-            log.info("INSERT: "+ sql.toString());
+            log.info("INSERT: "+ sql );
 
             while ((line = br.readLine()) != null) {
-                Object dtoGenerci = this.batchService.saveLote(line,input.getTypeProcess());
+                Object dtoGenerci = this.batchService.saveLote(line,input.getTypeProcess(),input.getTypeProcessMC());
                 Object[] params;
                 if (TableType.RPTA_MEF_TEMP.equals(tableType)) {
                     // Extrae los valores del DTO para usarlos como parámetros
@@ -78,7 +80,8 @@ public class LoteService {
                             dtoLoteMC.getNumTarj(),
                             dtoLoteMC.getFecApeTarj(),
                             dtoLoteMC.getFecVencTarj(),
-                            dtoLoteMC.getTipoResp()
+                            dtoLoteMC.getTipoResp(),
+                            dtoLoteMC.getCodEntidad()
                     };
                     //aqui  dbUtil.insert(dtoLoteMEF);
                     log.info("dtoLoteMC: "+ dtoLoteMC.toString());
