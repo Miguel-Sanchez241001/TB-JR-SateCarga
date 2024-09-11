@@ -71,9 +71,9 @@ public class BatchService {
             return (T) dtoLoteMEF; // Devuelve el DTO con los datos asignados
         } else {
             DtoLoteMC dtoLoteMC = new DtoLoteMC();
-            if (typeProcessMC.equals("FITAR")) {
+            if (typeProcessMC.equals("FICTA")) {
                 for (Bnsate12RptaMcTemp field : Bnsate12RptaMcTemp.values()) {
-                    String fieldValue = line.substring(field.getStart(), field.getEnd()).trim();
+                    String fieldValue = line.substring(field.getStart()-1, field.getStart()+field.getEnd()).trim();
 
                     switch (field) {
                         case FEC_VENC_TARJ:
@@ -112,7 +112,15 @@ public class BatchService {
                             fieldValue = line.substring(line.length() - 4).trim();
                             dtoLoteMC.setCodEntidad(fieldValue); // Fecha actual
                             break;
-
+                        case NUM_CUENTA:
+                             dtoLoteMC.setNumCuenta(fieldValue); // Fecha actual
+                            break;
+                        case FEC_APE_CTA:
+                            dtoLoteMC.setFecApeCta(QueryUtil.convertStringToSqlDate(fieldValue)); // Fecha actual
+                            break;
+                        case COD_BLQ:
+                            dtoLoteMC.setBlq1Cta(fieldValue); //
+                            break;
                     }
                 }
             } else if (typeProcessMC.equals("FICTA")) {

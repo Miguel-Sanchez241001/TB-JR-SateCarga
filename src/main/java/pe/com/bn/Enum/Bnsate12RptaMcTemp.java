@@ -11,8 +11,8 @@ public enum Bnsate12RptaMcTemp {
     BLQ2_CTA("B12_BLOQUEO_2_CUENTA", 0, 1, true),
 
 
-    FEC_APE_TARJ("B12_FECHA_APERTURA_TARJETA", 79, 87, true),
-    NUM_TARJ("B12_NUMERO_TARJETA", 6, 25, true),
+    FEC_APE_TARJ("B12_FECHA_APERTURA_TARJETA", 512, 8, true),
+    NUM_TARJ("B12_NUMERO_TARJETA", 493, 19, true),
     FEC_VENC_TARJ("B12_FECHA_VENCIMIENTO_TARJETA", 71, 79, true),
     TIPO_DOC("B12_TIPO_DOCUMENTO", 102, 103, true),
     NUM_DOC("B12_NUMERO_DOCUMENTO", 103, 115, true),
@@ -22,14 +22,15 @@ public enum Bnsate12RptaMcTemp {
     COD_PROD("B12_CODIGO_PRODUCTO", 3, 6, true),
     TIPO_RESP("B12_TIPO_RESPUESTA", 2, 2, true),
     COD_UNIDAD("B12_COD_INTERNO_TEMP", 2, 2, true),
+    NUM_CUENTA("B12_NUMERO_CUENTA", 0, 1, true),
+    FEC_APE_CTA("B12_FECHA_APERTURA_CUENTA", 1, 2, true),
+    COD_BLQ("B12_CODIGO_BLOQUEO", 2, 2, true),
+
 
     BLQ1_TARJ("B12_BLOQUEO_1_TARJETA", 140, 150, true),
 
 
 
-    NUM_CUENTA("B12_NUMERO_CUENTA", 0, 1, true),
-    FEC_APE_CTA("B12_FECHA_APERTURA_CUENTA", 1, 2, true),
-    COD_BLQ("B12_CODIGO_BLOQUEO", 2, 2, true),
 
 
 
@@ -86,6 +87,9 @@ public enum Bnsate12RptaMcTemp {
         mcFitar.add(FEC_VENC_TARJ);
         mcFitar.add(TIPO_RESP);
         mcFitar.add(COD_UNIDAD);
+        mcFitar.add(NUM_CUENTA);
+        mcFitar.add(FEC_APE_CTA);
+        mcFitar.add(COD_BLQ);
         return mcFitar;
     }
 

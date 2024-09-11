@@ -81,23 +81,16 @@ public class LoteService {
                             dtoLoteMC.getFecApeTarj(),
                             dtoLoteMC.getFecVencTarj(),
                             dtoLoteMC.getTipoResp(),
-                            dtoLoteMC.getCodEntidad()
+                            dtoLoteMC.getCodEntidad(),
+                            dtoLoteMC.getNumCuenta(),
+                            dtoLoteMC.getFecApeCta(),
+                            dtoLoteMC.getBlq1Cta()
                     };
                     //aqui  dbUtil.insert(dtoLoteMEF);
-                    log.info("dtoLoteMC: "+ dtoLoteMC.toString());
+                    log.info("dtoLoteMC: "+ dtoLoteMC);
                 }
-
-
-
-
-
-
-
-
-
-
-                int rowsAffected = dbUtil.insert(sql, params);
-                log.info("Filas insertadas: {}" + rowsAffected);
+                // int rowsAffected = dbUtil.insert(sql, params);
+               // log.info("Filas insertadas: {}" + rowsAffected);
             }
         } catch (Exception e) {
             log.error("ERROR: {}"+ e.getMessage());
