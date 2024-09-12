@@ -1,5 +1,6 @@
 package pe.com.bn.service;
 
+import org.apache.log4j.Logger;
 import pe.com.bn.Enum.Bnsate12RptaMcTemp;
 import pe.com.bn.Enum.Bnsate13RptaMefTemp;
 import pe.com.bn.Enum.TableType;
@@ -13,11 +14,13 @@ import java.sql.Date;
 import java.text.ParseException;
 
 public class BatchService {
+    private static final Logger log = Logger.getLogger(BatchService.class);
+
     public String getLote(String line, String typeProcess) {
         return null;
     }
 
-    public <T> T saveLote(String line, String typeProcess, String typeProcessMC) throws ParseException, ProcessException {
+    public <T> T saveLote(String line, String typeProcess, String typeProcessMC) throws ProcessException {
         // Verifica si el tipo de proceso coincide
         if (typeProcess.equals(TableType.RPTA_MEF_TEMP.getTableNumber())) {
             DtoLoteMEF dtoLoteMEF = new DtoLoteMEF();
@@ -45,10 +48,20 @@ public class BatchService {
                         dtoLoteMEF.setNumDocumento(fieldValue);
                         break;
                     case B13_FEC_INICIO_AUT:
-                        dtoLoteMEF.setFecInicioAut(QueryUtil.convertStringToSqlDate(fieldValue));
+                        try {
+                            dtoLoteMEF.setFecInicioAut(QueryUtil.convertStringToSqlDate(fieldValue));
+                        } catch (ParseException e) {
+                            log.error(e.getMessage());
+                            throw new ProcessException("Error en trama :" + line);
+                        }
                         break;
                     case B13_FEC_FIN_AUT:
-                        dtoLoteMEF.setFecFinAut(QueryUtil.convertStringToSqlDate(fieldValue));
+                        try {
+                            dtoLoteMEF.setFecFinAut(QueryUtil.convertStringToSqlDate(fieldValue));
+                        } catch (ParseException e) {
+                            log.error(e.getMessage());
+                            throw new ProcessException("Error en trama :" + line);
+                        }
                         break;
                     case B13_IMPORTE:
                         BigDecimal importe = new BigDecimal(fieldValue).movePointLeft(2);
@@ -71,13 +84,17 @@ public class BatchService {
             return (T) dtoLoteMEF; // Devuelve el DTO con los datos asignados
         } else {
             DtoLoteMC dtoLoteMC = new DtoLoteMC();
-            if (typeProcessMC.equals("FITAR")) {
+            if (typeProcessMC.equals("FICTA")) {
                 for (Bnsate12RptaMcTemp field : Bnsate12RptaMcTemp.values()) {
-                    String fieldValue = line.substring(field.getStart(), field.getEnd()).trim();
+                    String fieldValue = line.substring(field.getStart()-1, field.getStart()+field.getEnd()).trim();
 
                     switch (field) {
                         case FEC_VENC_TARJ:
-                            dtoLoteMC.setFecVencTarj(QueryUtil.convertStringToSqlDate(fieldValue));
+                            try {
+                                dtoLoteMC.setFecVencTarj(QueryUtil.convertStringToSqlDate(fieldValue));
+                            } catch (ParseException e) {
+                                throw new RuntimeException(e);
+                            }
                             break;
                         case TIPO_DOC:
                             dtoLoteMC.setTipoDoc(fieldValue);
@@ -102,20 +119,37 @@ public class BatchService {
                             dtoLoteMC.setNumTarj(fieldValue);
                             break;
                         case FEC_APE_TARJ:
-                            dtoLoteMC.setFecApeTarj(QueryUtil.convertStringToSqlDate(fieldValue));
+                            try {
+                                dtoLoteMC.setFecApeTarj(QueryUtil.convertStringToSqlDate(fieldValue));
+                            } catch (ParseException e) {
+                                log.error(e.getMessage());
+                                throw new ProcessException("Error en trama :" + line);
+                            }
                             break;
 
                         case FEC_REG:
                             dtoLoteMC.setFecReg(new Date(System.currentTimeMillis())); // Fecha actual
                             break;
                         case COD_UNIDAD:
-                            fieldValue = line.substring(line.length() - 4).trim();
                             dtoLoteMC.setCodEntidad(fieldValue); // Fecha actual
                             break;
-
+                        case NUM_CUENTA:
+                            dtoLoteMC.setNumCuenta(fieldValue);
+                            break;
+                        case FEC_APE_CTA:
+                            try {
+                                dtoLoteMC.setFecApeCta(QueryUtil.convertStringToSqlDate(fieldValue)); // Fecha actual
+                            } catch (ParseException e) {
+                                log.error(e.getMessage());
+                                throw new ProcessException("Error en trama :" + line);
+                            }
+                            break;
+                        case BLQ1_CTA:
+                            dtoLoteMC.setBlq1Cta(fieldValue);
+                            break;
                     }
                 }
-            } else if (typeProcessMC.equals("FICTA")) {
+            } else if (typeProcessMC.equals("FITAR")) {
 
             } else {
                 throw new ProcessException("Tipo de procesoMC no soportado: " + typeProcessMC);

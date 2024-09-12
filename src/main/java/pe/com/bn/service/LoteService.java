@@ -43,7 +43,15 @@ public class LoteService {
             log.info("INSERT: "+ sql );
 
             while ((line = br.readLine()) != null) {
-                Object dtoGenerci = this.batchService.saveLote(line,input.getTypeProcess(),input.getTypeProcessMC());
+                Object dtoGenerci = null;
+                try {
+                    dtoGenerci = this.batchService.saveLote(line,input.getTypeProcess(),input.getTypeProcessMC());
+
+                }catch (Exception e){
+                    log.error(e.getMessage() );
+                    continue;
+                }
+
                 Object[] params;
                 if (TableType.RPTA_MEF_TEMP.equals(tableType)) {
                     // Extrae los valores del DTO para usarlos como parámetros
@@ -81,22 +89,17 @@ public class LoteService {
                             dtoLoteMC.getFecApeTarj(),
                             dtoLoteMC.getFecVencTarj(),
                             dtoLoteMC.getTipoResp(),
-                            dtoLoteMC.getCodEntidad()
+                            dtoLoteMC.getCodEntidad(),
+                            dtoLoteMC.getNumCuenta(),
+                            dtoLoteMC.getFecApeCta(),
+                            dtoLoteMC.getBlq1Cta(),
                     };
                     //aqui  dbUtil.insert(dtoLoteMEF);
                     log.info("dtoLoteMC: "+ dtoLoteMC.toString());
                 }
 
 
-
-
-
-
-
-
-
-
-                int rowsAffected = dbUtil.insert(sql, params);
+               int rowsAffected = dbUtil.insert(sql, params);
                 log.info("Filas insertadas: {}" + rowsAffected);
             }
         } catch (Exception e) {

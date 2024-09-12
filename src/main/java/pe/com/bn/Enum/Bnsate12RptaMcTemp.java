@@ -6,30 +6,31 @@ import java.util.List;
 public enum Bnsate12RptaMcTemp {
 
     // Columnas de la tabla con nombre, posición de inicio, posición de fin, y si permite nulos
-    TRACE("B12_TRACE", 0, 1, true),
-    BLQ1_CTA("B12_BLOQUEO_1_CUENTA", 0, 1, true),
-    BLQ2_CTA("B12_BLOQUEO_2_CUENTA", 0, 1, true),
+    TRACE("B12_TRACE", 1, 1, true),
+     BLQ2_CTA("B12_BLOQUEO_2_CUENTA", 1, 1, true),
 
 
-    FEC_APE_TARJ("B12_FECHA_APERTURA_TARJETA", 79, 87, true),
-    NUM_TARJ("B12_NUMERO_TARJETA", 6, 25, true),
-    FEC_VENC_TARJ("B12_FECHA_VENCIMIENTO_TARJETA", 71, 79, true),
-    TIPO_DOC("B12_TIPO_DOCUMENTO", 102, 103, true),
-    NUM_DOC("B12_NUMERO_DOCUMENTO", 103, 115, true),
-    APELLIDOS("B12_APELLIDOS", 115, 145, true),
-    NOMBRE("B12_NOMBRE", 145, 175, true),
+    FEC_APE_TARJ("B12_FECHA_APERTURA_TARJETA", 512, 7, true),
+    NUM_TARJ("B12_NUMERO_TARJETA", 493, 18, true),
+    FEC_VENC_TARJ("B12_FECHA_VENCIMIENTO_TARJETA", 520, 7, true),
+    TIPO_DOC("B12_TIPO_DOCUMENTO", 69, 0, true),
+    NUM_DOC("B12_NUMERO_DOCUMENTO", 70, 11, true),
+    APELLIDOS("B12_APELLIDOS", 48, 14, true),
+    NOMBRE("B12_NOMBRE", 48, 14, true),
     FEC_REG("B12_FECHA_REGISTRO", 1, 2, true),
-    COD_PROD("B12_CODIGO_PRODUCTO", 3, 6, true),
-    TIPO_RESP("B12_TIPO_RESPUESTA", 2, 2, true),
-    COD_UNIDAD("B12_COD_INTERNO_TEMP", 2, 2, true),
+    COD_PROD("B12_CODIGO_PRODUCTO", 45, 2, true),
+    TIPO_RESP("B12_TIPO_RESPUESTA", 2, 1, true),
+    COD_UNIDAD("B12_COD_INTERNO_TEMP", 489, 3, true),
+    NUM_CUENTA("B12_NUMERO_CUENTA", 7, 18, true),
+    FEC_APE_CTA("B12_FECHA_APERTURA_CUENTA", 117, 7, true),
+     BLQ1_CTA("B12_BLOQUEO_1_CUENTA", 111, 0, true),
 
     BLQ1_TARJ("B12_BLOQUEO_1_TARJETA", 140, 150, true),
+    COD_BLQ("B12_CODIGO_BLOQUEO", 111, 0, true),
 
 
 
-    NUM_CUENTA("B12_NUMERO_CUENTA", 0, 1, true),
-    FEC_APE_CTA("B12_FECHA_APERTURA_CUENTA", 1, 2, true),
-    COD_BLQ("B12_CODIGO_BLOQUEO", 2, 2, true),
+
 
 
 
@@ -86,6 +87,9 @@ public enum Bnsate12RptaMcTemp {
         mcFitar.add(FEC_VENC_TARJ);
         mcFitar.add(TIPO_RESP);
         mcFitar.add(COD_UNIDAD);
+        mcFitar.add(NUM_CUENTA);
+        mcFitar.add(FEC_APE_CTA);
+        mcFitar.add(BLQ1_CTA);
         return mcFitar;
     }
 
