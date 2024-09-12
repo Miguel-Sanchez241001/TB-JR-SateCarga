@@ -1,5 +1,6 @@
 package pe.com.bn.service;
 
+import org.apache.log4j.Logger;
 import pe.com.bn.Enum.Bnsate12RptaMcTemp;
 import pe.com.bn.Enum.Bnsate13RptaMefTemp;
 import pe.com.bn.Enum.TableType;
