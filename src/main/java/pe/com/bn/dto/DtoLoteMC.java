@@ -49,6 +49,9 @@ public class DtoLoteMC {
                 ", tipoDoc='" + tipoDoc + '\'' +
                 ", codEntidad='" + codEntidad + '\'' +
                 ", fecReg=" + fecReg +
+                ", fecApeCta=" + fecApeCta +
+                ", numCuenta=" + numCuenta +
+                ", blq1Cta=" + blq1Cta +
                 '}';
     }
 }
