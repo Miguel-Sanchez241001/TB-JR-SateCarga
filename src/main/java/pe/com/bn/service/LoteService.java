@@ -20,9 +20,9 @@ public class LoteService {
     }
 
     public void process(InputParametros input) throws Exception {
-        log.info("Parameters from shell: {}"+ input.toString());
+        log.info("Parameters from shell"+ input.toString());
         String filePath = input.getPathFile();
-        log.info("{} file is located in: {}"+ filePath);
+        log.info("file is located in: "+ filePath);
         DbUtil dbUtil = DbUtil.getInstance(input.getUrlConection());
         try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
             // Omitir la primera línea
@@ -40,7 +40,7 @@ public class LoteService {
             }
             // Genera la consulta de inserción para la tabla correspondiente
             String sql = QueryUtil.generateInsertQuery(tableType);
-            log.info("INSERT: "+ sql );
+            log.debug("INSERT: "+ sql );
 
             while ((line = br.readLine()) != null) {
                 Object dtoGenerci = null;
@@ -71,7 +71,7 @@ public class LoteService {
                             dtoLoteMEF.getFechaRegistro()        // B13_FECHA_REGISTRO (Fecha actual)
                     };
                     //aqui  dbUtil.insert(dtoLoteMEF);
-                    log.info("DtoLoteMEF: "+ dtoLoteMEF.toString());
+                    log.debug("DtoLoteMEF: "+ dtoLoteMEF.toString());
 
 
                 }
@@ -95,12 +95,12 @@ public class LoteService {
                             dtoLoteMC.getBlq1Cta(),
                     };
                     //aqui  dbUtil.insert(dtoLoteMEF);
-                    log.info("dtoLoteMC: "+ dtoLoteMC.toString());
+                    log.debug("dtoLoteMC: "+ dtoLoteMC.toString());
                 }
 
 
                int rowsAffected = dbUtil.insert(sql, params);
-                log.info("Filas insertadas: {}" + rowsAffected);
+                log.debug("Filas insertadas: {}" + rowsAffected);
             }
         } catch (Exception e) {
             log.error("ERROR: {}"+ e.getMessage());
