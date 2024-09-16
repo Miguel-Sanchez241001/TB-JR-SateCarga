@@ -15,70 +15,48 @@ import java.io.*;
 public class MainProcess {
     private static final Logger log = Logger.getLogger(MainProcess.class);
 
-    public static void main(String... args)  {
+    public static void main(String... args) {
 
-        if (args.length < 5) {
-            log.error("Número insuficiente de argumentos. Se requieren 4 argumentos:" +
-                    " <urlConection>" +
-                    " <pathFile> <pathLog> " +
-                    "<typeProcess> <typeProcessMC> ");
+        // Verificación del número de argumentos
+        if (args.length < 6) {
+            log.error("Número insuficiente de argumentos. Se requieren 6 argumentos: " +
+                    "<urlConection> <pathFile> <pathLog> <pathLogError> <typeProcess> <typeProcessMC>");
             System.out.println("FAILED");
             System.exit(1); // Salida con código 1 indicando error
         }
+
+        // Inicializar parámetros de entrada
         InputParametros inputParameter = new InputParametros();
         inputParameter.setUrlConection(args[0]);
         inputParameter.setPathFile(args[1]);
         inputParameter.setPathLog(args[2]);
-        inputParameter.setTypeProcess(args[3]);
-        inputParameter.setTypeProcessMC(args[4]);
+        inputParameter.setPathLogError(args[3]);
+        inputParameter.setTypeProcess(args[4]);
+        inputParameter.setTypeProcessMC(args[5]);
+
+        // Crear instancia del servicio
         LoteService service = new LoteService();
+
         try {
-            LogConfig.configureLogFile(inputParameter.getPathLog());
+            log.info("Inicio de configuración de archivos de log.");
+            LogConfig.configureLogFiles(inputParameter.getPathLog(), inputParameter.getPathLogError());
+            log.info("Archivos de log configurados correctamente.");
 
             // Ejecutar el proceso
+            log.info("Inicio del proceso con los parámetros proporcionados.");
             service.process(inputParameter);
             log.info("Proceso completado exitosamente.");
-            System.out.println("OK"); // Imprimir OK si todo salió bien
+
+            // Indicar que el proceso finalizó correctamente
+            System.out.println("OK");
             System.exit(0); // Salida con código 0 indicando éxito
 
         } catch (Exception e) {
             log.error("Error en el proceso: " + e.getMessage(), e);
-            System.out.println("FAILED"); // Imprimir FAILED si ocurrió un error
+
+            // Evitar mostrar detalles específicos del error en la salida estándar
+            System.out.println("FAILED");
             System.exit(1); // Salida con código 1 indicando error
         }
-//        try (
-//                BufferedReader reader = new BufferedReader(new FileReader(args[1]));
-//                BufferedWriter writer = new BufferedWriter(new FileWriter(args[2]))
-//        ) {
-//            String linea = reader.readLine(); // Leer la primera línea
-//
-//            // Mientras haya líneas en el archivo
-//            while (linea != null) {
-//                // Pasar la línea al método que valida
-//
-//                // Escribir la línea en el archivo de salida
-//                writer.write(cumpleCondicion(linea));
-//                writer.newLine();
-//
-//                // Leer la siguiente línea
-//                linea = reader.readLine();
-//            }
-//
-//            System.out.println("Archivo modificado correctamente.");
-//        } catch (IOException e) {
-//            System.err.println("Error al procesar el archivo: " + e.getMessage());
-//        }
-//
-//    }
-
-//    private static String cumpleCondicion(String linea) {
-//        if (linea.contains("15743653") || linea.contains("10135089") || linea.contains("16727214")){
-//            return linea + "6001";
-//        }else{
-//            return linea + "9999";
-//        }
-//
-//
-//
-   }
+    }
 }

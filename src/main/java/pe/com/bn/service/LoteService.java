@@ -15,19 +15,23 @@ import java.io.FileReader;
 public class LoteService {
     private static final Logger log = Logger.getLogger(LoteService.class);
     private BatchService batchService;
-    public LoteService( ) {
+
+    public LoteService() {
         this.batchService = new BatchService();
     }
 
     public void process(InputParametros input) throws Exception {
-        log.info("Parameters from shell"+ input.toString());
+        // Registrar los parámetros sin exponer información sensible
+        log.info("Inicio del proceso con los parámetros de entrada.");
+        log.debug("Ruta del archivo: " + input.getPathFile());
+
         String filePath = input.getPathFile();
-        log.info("file is located in: "+ filePath);
         DbUtil dbUtil = DbUtil.getInstance(input.getUrlConection());
+
         try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
             // Omitir la primera línea
             String line = br.readLine();
-
+            log.info("Encabezado del archivo omitido, iniciando la lectura de registros.");
 
             // Determina el tipo de tabla basado en el tipo de proceso
             TableType tableType;
@@ -36,47 +40,47 @@ public class LoteService {
             } else if ("2".equals(input.getTypeProcess())) {
                 tableType = TableType.RPTA_MEF_TEMP;
             } else {
-                throw new ProcessException("Tipo de proceso no soportado: " + input.getTypeProcess());
+                throw new ProcessException("Tipo de proceso no soportado.");
             }
+            log.info("Tipo de proceso identificado: " + tableType);
+
             // Genera la consulta de inserción para la tabla correspondiente
             String sql = QueryUtil.generateInsertQuery(tableType);
-            log.debug("INSERT: "+ sql );
+            log.debug("Consulta SQL de inserción generada para la tabla: " + tableType);
 
+            // Procesar cada línea del archivo
             while ((line = br.readLine()) != null) {
                 Object dtoGenerci = null;
                 try {
-                    dtoGenerci = this.batchService.saveLote(line,input.getTypeProcess(),input.getTypeProcessMC());
+                    dtoGenerci = this.batchService.saveLote(line, input.getTypeProcess(), input.getTypeProcessMC());
+                    log.debug("Línea procesada y objeto DTO generado correctamente.");
 
-                }catch (Exception e){
-                    log.error(e.getMessage() );
-                    continue;
+                } catch (Exception e) {
+                    log.error("Error al procesar la línea: " + e.getMessage());
+                    continue; // Continuar con la siguiente línea
                 }
 
                 Object[] params;
                 if (TableType.RPTA_MEF_TEMP.equals(tableType)) {
-                    // Extrae los valores del DTO para usarlos como parámetros
                     DtoLoteMEF dtoLoteMEF = (DtoLoteMEF) dtoGenerci;
                     params = new Object[]{
-                            dtoLoteMEF.getSecOperacion(),        // B13_SEC_OPERACION
-                            dtoLoteMEF.getTipoOperacion(),       // B13_TIPO_OPERACION
-                            dtoLoteMEF.getRucMefTemp(),          // B13_RUC_MEF_TEMP
-                            dtoLoteMEF.getCuentaCargo(),         // B13_CUENTA_CARGO
-                            dtoLoteMEF.getFecInicioAut(),        // B13_FEC_INICIO_AUT
-                            dtoLoteMEF.getFecFinAut(),           // B13_FEC_FIN_AUT
-                            dtoLoteMEF.getTipoTarjeta(),         // B13_TIPO_TARJETA
-                            dtoLoteMEF.getMoneda(),              // B13_MONEDA
-                            dtoLoteMEF.getImporte(),             // B13_IMPORTE
-                            dtoLoteMEF.getTipoDocumento(),       // B13_TIPO_DOCUMENTO
-                            dtoLoteMEF.getNumDocumento(),        // B13_NUM_DOCUMENTO
-                            dtoLoteMEF.getFechaRegistro()        // B13_FECHA_REGISTRO (Fecha actual)
+                            dtoLoteMEF.getSecOperacion(),
+                            dtoLoteMEF.getTipoOperacion(),
+                            dtoLoteMEF.getRucMefTemp(),
+                            dtoLoteMEF.getCuentaCargo(),
+                            dtoLoteMEF.getFecInicioAut(),
+                            dtoLoteMEF.getFecFinAut(),
+                            dtoLoteMEF.getTipoTarjeta(),
+                            dtoLoteMEF.getMoneda(),
+                            dtoLoteMEF.getImporte(),
+                            dtoLoteMEF.getTipoDocumento(),
+                            dtoLoteMEF.getNumDocumento(),
+                            dtoLoteMEF.getFechaRegistro()
                     };
-                    //aqui  dbUtil.insert(dtoLoteMEF);
-                    log.debug("DtoLoteMEF: "+ dtoLoteMEF.toString());
+                    log.debug("Objeto DtoLoteMEF creado correctamente. Listo para insertar.");
+                    // log.debug("DtoLoteMEF: " + dtoLoteMEF.toString()); // Comentar o eliminar para evitar logs sensibles
 
-
-                }
-                else{
-                    // Extrae los valores del DTO para usarlos como parámetros
+                } else {
                     DtoLoteMC dtoLoteMC = (DtoLoteMC) dtoGenerci;
                     params = new Object[]{
                             dtoLoteMC.getTipoDoc(),
@@ -92,19 +96,22 @@ public class LoteService {
                             dtoLoteMC.getCodEntidad(),
                             dtoLoteMC.getNumCuenta(),
                             dtoLoteMC.getFecApeCta(),
-                            dtoLoteMC.getBlq1Cta(),
+                            dtoLoteMC.getBlq1Cta()
                     };
-                    //aqui  dbUtil.insert(dtoLoteMEF);
-                    log.debug("dtoLoteMC: "+ dtoLoteMC.toString());
+                    log.debug("Objeto DtoLoteMC creado correctamente. Listo para insertar.");
+                    // log.debug("DtoLoteMC: " + dtoLoteMC.toString()); // Comentar o eliminar para evitar logs sensibles
                 }
 
-
-               int rowsAffected = dbUtil.insert(sql, params);
-                log.debug("Filas insertadas: {}" + rowsAffected);
+                // Ejecutar la inserción en la base de datos
+                int rowsAffected = dbUtil.insert(sql, params);
+                log.debug("Filas insertadas: " + rowsAffected);
             }
+
+            log.info("Procesamiento de archivo completado correctamente.");
+
         } catch (Exception e) {
-            log.error("ERROR: {}"+ e.getMessage());
-            throw new ProcessException(e.getMessage());
+            log.error("Error durante el procesamiento del archivo: " + e.getMessage(), e);
+            throw new ProcessException("Error al procesar el archivo: " + e.getMessage());
         }
     }
 }
