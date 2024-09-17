@@ -18,9 +18,9 @@ public class MainProcess {
     public static void main(String... args) {
 
         // Verificación del número de argumentos
-        if (args.length < 6) {
+        if (args.length < 4) {
             log.error("Número insuficiente de argumentos. Se requieren 6 argumentos: " +
-                    "<urlConection> <pathFile> <pathLog> <pathLogError> <typeProcess> <typeProcessMC>");
+                    "<urlConection> <pathFile>  <typeProcess> <typeProcessMC>");
             System.out.println("FAILED");
             System.exit(1); // Salida con código 1 indicando error
         }
@@ -29,18 +29,13 @@ public class MainProcess {
         InputParametros inputParameter = new InputParametros();
         inputParameter.setUrlConection(args[0]);
         inputParameter.setPathFile(args[1]);
-        inputParameter.setPathLog(args[2]);
-        inputParameter.setPathLogError(args[3]);
-        inputParameter.setTypeProcess(args[4]);
-        inputParameter.setTypeProcessMC(args[5]);
+        inputParameter.setTypeProcess(args[2]);
+        inputParameter.setTypeProcessMC(args[3]);
 
         // Crear instancia del servicio
         LoteService service = new LoteService();
 
         try {
-            log.info("Inicio de configuración de archivos de log.");
-            LogConfig.configureLogFiles(inputParameter.getPathLog(), inputParameter.getPathLogError());
-            log.info("Archivos de log configurados correctamente.");
 
             // Ejecutar el proceso
             log.info("Inicio del proceso con los parámetros proporcionados.");
