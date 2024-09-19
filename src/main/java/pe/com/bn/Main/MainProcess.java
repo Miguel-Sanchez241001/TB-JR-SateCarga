@@ -1,11 +1,8 @@
 package pe.com.bn.Main;
 
 import org.apache.log4j.Logger;
-import pe.com.bn.config.log.LogConfig;
 import pe.com.bn.model.InputParametros;
-import pe.com.bn.service.LoteService;
-
-import java.io.*;
+import pe.com.bn.service.CargaTxtService;
 
 /**
  * User: Miguel Sanchez
@@ -18,40 +15,31 @@ public class MainProcess {
     public static void main(String... args) {
 
         // Verificación del número de argumentos
-        if (args.length < 4) {
+        if (args.length < 5) {
             log.error("Número insuficiente de argumentos. Se requieren 6 argumentos: " +
                     "<urlConection> <pathFile>  <typeProcess> <typeProcessMC>");
             System.out.println("FAILED");
             System.exit(1); // Salida con código 1 indicando error
         }
 
-        // Inicializar parámetros de entrada
         InputParametros inputParameter = new InputParametros();
         inputParameter.setUrlConection(args[0]);
         inputParameter.setPathFile(args[1]);
-        inputParameter.setTypeProcess(args[2]);
-        inputParameter.setTypeProcessMC(args[3]);
-
-        // Crear instancia del servicio
-        LoteService service = new LoteService();
+        inputParameter.setPathFileFail(args[2]);
+        inputParameter.setTypeProcess(args[3]);
+        inputParameter.setTypeProcessMC(args[4]);
+        CargaTxtService service = new CargaTxtService();
 
         try {
-
-            // Ejecutar el proceso
             log.info("Inicio del proceso con los parámetros proporcionados.");
             service.process(inputParameter);
             log.info("Proceso completado exitosamente.");
-
-            // Indicar que el proceso finalizó correctamente
             System.out.println("OK");
-            System.exit(0); // Salida con código 0 indicando éxito
-
+            System.exit(0);
         } catch (Exception e) {
             log.error("Error en el proceso: " + e.getMessage(), e);
-
-            // Evitar mostrar detalles específicos del error en la salida estándar
             System.out.println("FAILED");
-            System.exit(1); // Salida con código 1 indicando error
+            System.exit(1);
         }
     }
 }

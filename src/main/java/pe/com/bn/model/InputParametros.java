@@ -12,7 +12,7 @@ import lombok.ToString;
 public class InputParametros {
     private String urlConection;
     private String pathFile;
-    private String pathLog;
+    private String pathFileFail;
     private String pathLogError;
     private String typeProcess;
     private String typeProcessMC;
