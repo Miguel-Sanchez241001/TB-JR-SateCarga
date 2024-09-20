@@ -41,12 +41,12 @@ public class CargaTxtService {
 
         try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
 
-            String line = br.readLine();
-             totalRegistrosEsperados = descripcionArchivo(line);  // Extraer el número total de registros de la cabecera
-
-            // Determinar el tipo de tabla basado en el tipo de proceso
-            TableType tableType = getTableType(input);
+             TableType tableType = getTableType(input);
             log.info("Tipo de proceso identificado: " + tableType);
+            String line = br.readLine();
+             totalRegistrosEsperados = descripcionArchivo(line,tableType);  // Extraer el número total de registros de la cabecera
+
+
 
             // Genera la consulta de inserción para la tabla correspondiente
             String sql = QueryUtil.generateInsertQuery(tableType);
@@ -175,9 +175,29 @@ public class CargaTxtService {
     }
 
 
-    private int descripcionArchivo(String line) {
+    private int descripcionArchivo(String line, TableType tableType) {
         int totalRegistros = 0;
-        for (Cabeceras cabecera : Cabeceras.values()) {
+        for (Cabeceras cabecera : Cabeceras.getCabeceraMC()) {
+            int startIndex = cabecera.getPosicionIncial() - 1;
+            int endIndex = startIndex + cabecera.getTamaño();
+            String valor = line.substring(startIndex, endIndex).trim();
+
+            // Manejar el caso específico de la fecha
+            if ("Fecha".equals(cabecera.getName())) {
+                String fecha = valor;
+                String fechaFormateada = fecha.substring(0, 4) + "-" + fecha.substring(4, 6) + "-" + fecha.substring(6, 8);
+                log.info(cabecera.getName() + ": " + fechaFormateada);
+            }
+            // Manejar el caso específico de los registros
+            else if ("Regitros".equals(cabecera.getName())) {
+                totalRegistros = Integer.parseInt(valor);  // Convertir el valor a entero
+                log.info(cabecera.getName() + ": " + totalRegistros);
+            } else {
+                log.info(cabecera.getName() + ": " + valor);
+            }
+        }
+
+        for (Cabeceras cabecera : Cabeceras.getCabeceraMEF()) {
             int startIndex = cabecera.getPosicionIncial() - 1;
             int endIndex = startIndex + cabecera.getTamaño();
             String valor = line.substring(startIndex, endIndex).trim();
