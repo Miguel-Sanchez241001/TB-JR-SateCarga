@@ -6,11 +6,11 @@ import java.util.List;
 public enum Cabeceras {
 
 
-    MC_FICTA_FECHA("Fecha",12,8),
-   MC_FICTA_REGISTROS("Regitros",26,8),
+    MC_FICTA_FECHA("Fecha",1,8),
+   MC_FICTA_REGISTROS("Regitros",15,15),
 
-    MEF_TTPHAB_FECHA("Fecha",1,8),
-    MEF_TTPHAB_REGISTROS("Regitros",15,15);
+    MEF_TTPHAB_FECHA("Fecha",12,8),
+    MEF_TTPHAB_REGISTROS("Regitros",26,8);
 
     private String name;
     private int posicionIncial;
