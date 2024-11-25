@@ -1,0 +1,61 @@
+2024-11-25 07:39:55,885 INFO  pe.com.bn.Main.MainProcess  - Inicio del proceso con los parámetros proporcionados.
+2024-11-25 07:39:57,868 INFO  pe.com.bn.service.CargaTxtService  - Tipo de proceso identificado: RPTA_MC_TEMP
+2024-11-25 07:39:57,870 INFO  pe.com.bn.service.CargaTxtService  - Regitros: 371
+2024-11-25 07:39:57,870 INFO  pe.com.bn.service.CargaTxtService  - Fecha: 2024-10-24
+2024-11-25 07:39:58,242 ERROR pe.com.bn.util.MapperObject  - Unparseable date: "00000000"
+2024-11-25 07:39:58,243 ERROR pe.com.bn.util.MapperObject  - Error Campo: B12_FECHA_APERTURA_TARJETA
+2024-11-25 07:39:58,244 ERROR pe.com.bn.util.MapperObject  - Unparseable date: "00000000"
+2024-11-25 07:39:58,244 ERROR pe.com.bn.util.MapperObject  - Error Campo: B12_FECHA_VENCIMIENTO_TARJETA
+2024-11-25 07:39:58,704 ERROR pe.com.bn.util.MapperObject  - Unparseable date: "00000000"
+2024-11-25 07:39:58,704 ERROR pe.com.bn.util.MapperObject  - Error Campo: B12_FECHA_APERTURA_TARJETA
+2024-11-25 07:39:58,704 ERROR pe.com.bn.util.MapperObject  - Unparseable date: "00000000"
+2024-11-25 07:39:58,705 ERROR pe.com.bn.util.MapperObject  - Error Campo: B12_FECHA_VENCIMIENTO_TARJETA
+2024-11-25 07:39:58,713 ERROR pe.com.bn.util.MapperObject  - Unparseable date: "00000000"
+2024-11-25 07:39:58,714 ERROR pe.com.bn.util.MapperObject  - Error Campo: B12_FECHA_APERTURA_TARJETA
+2024-11-25 07:39:58,714 ERROR pe.com.bn.util.MapperObject  - Unparseable date: "00000000"
+2024-11-25 07:39:58,714 ERROR pe.com.bn.util.MapperObject  - Error Campo: B12_FECHA_VENCIMIENTO_TARJETA
+2024-11-25 07:39:58,723 ERROR pe.com.bn.util.MapperObject  - Unparseable date: "00000000"
+2024-11-25 07:39:58,723 ERROR pe.com.bn.util.MapperObject  - Error Campo: B12_FECHA_APERTURA_TARJETA
+2024-11-25 07:39:58,723 ERROR pe.com.bn.util.MapperObject  - Unparseable date: "00000000"
+2024-11-25 07:39:58,723 ERROR pe.com.bn.util.MapperObject  - Error Campo: B12_FECHA_VENCIMIENTO_TARJETA
+2024-11-25 07:39:58,727 ERROR pe.com.bn.util.MapperObject  - Unparseable date: "00000000"
+2024-11-25 07:39:58,728 ERROR pe.com.bn.util.MapperObject  - Error Campo: B12_FECHA_APERTURA_TARJETA
+2024-11-25 07:39:58,728 ERROR pe.com.bn.util.MapperObject  - Unparseable date: "00000000"
+2024-11-25 07:39:58,728 ERROR pe.com.bn.util.MapperObject  - Error Campo: B12_FECHA_VENCIMIENTO_TARJETA
+2024-11-25 07:39:58,841 ERROR pe.com.bn.util.MapperObject  - Unparseable date: "00000000"
+2024-11-25 07:39:58,841 ERROR pe.com.bn.util.MapperObject  - Error Campo: B12_FECHA_APERTURA_TARJETA
+2024-11-25 07:39:58,841 ERROR pe.com.bn.util.MapperObject  - Unparseable date: "00000000"
+2024-11-25 07:39:58,841 ERROR pe.com.bn.util.MapperObject  - Error Campo: B12_FECHA_VENCIMIENTO_TARJETA
+2024-11-25 07:39:58,846 ERROR pe.com.bn.util.MapperObject  - Unparseable date: "00000000"
+2024-11-25 07:39:58,847 ERROR pe.com.bn.util.MapperObject  - Error Campo: B12_FECHA_APERTURA_TARJETA
+2024-11-25 07:39:58,847 ERROR pe.com.bn.util.MapperObject  - Unparseable date: "00000000"
+2024-11-25 07:39:58,847 ERROR pe.com.bn.util.MapperObject  - Error Campo: B12_FECHA_VENCIMIENTO_TARJETA
+2024-11-25 07:39:58,861 ERROR pe.com.bn.util.MapperObject  - Unparseable date: "00000000"
+2024-11-25 07:39:58,861 ERROR pe.com.bn.util.MapperObject  - Error Campo: B12_FECHA_APERTURA_TARJETA
+2024-11-25 07:39:58,862 ERROR pe.com.bn.util.MapperObject  - Unparseable date: "00000000"
+2024-11-25 07:39:58,862 ERROR pe.com.bn.util.MapperObject  - Error Campo: B12_FECHA_VENCIMIENTO_TARJETA
+2024-11-25 07:40:00,329 ERROR pe.com.bn.util.MapperObject  - Unparseable date: "00000000"
+2024-11-25 07:40:00,329 ERROR pe.com.bn.util.MapperObject  - Error Campo: B12_FECHA_APERTURA_TARJETA
+2024-11-25 07:40:00,329 ERROR pe.com.bn.util.MapperObject  - Unparseable date: "00000000"
+2024-11-25 07:40:00,330 ERROR pe.com.bn.util.MapperObject  - Error Campo: B12_FECHA_VENCIMIENTO_TARJETA
+2024-11-25 07:40:00,337 ERROR pe.com.bn.util.MapperObject  - Unparseable date: "00000000"
+2024-11-25 07:40:00,337 ERROR pe.com.bn.util.MapperObject  - Error Campo: B12_FECHA_APERTURA_TARJETA
+2024-11-25 07:40:00,337 ERROR pe.com.bn.util.MapperObject  - Unparseable date: "00000000"
+2024-11-25 07:40:00,337 ERROR pe.com.bn.util.MapperObject  - Error Campo: B12_FECHA_VENCIMIENTO_TARJETA
+2024-11-25 07:40:00,344 ERROR pe.com.bn.util.MapperObject  - Unparseable date: "00000000"
+2024-11-25 07:40:00,344 ERROR pe.com.bn.util.MapperObject  - Error Campo: B12_FECHA_APERTURA_TARJETA
+2024-11-25 07:40:00,345 ERROR pe.com.bn.util.MapperObject  - Unparseable date: "00000000"
+2024-11-25 07:40:00,345 ERROR pe.com.bn.util.MapperObject  - Error Campo: B12_FECHA_VENCIMIENTO_TARJETA
+2024-11-25 07:40:00,354 ERROR pe.com.bn.util.MapperObject  - Unparseable date: "00000000"
+2024-11-25 07:40:00,354 ERROR pe.com.bn.util.MapperObject  - Error Campo: B12_FECHA_APERTURA_TARJETA
+2024-11-25 07:40:00,354 ERROR pe.com.bn.util.MapperObject  - Unparseable date: "00000000"
+2024-11-25 07:40:00,355 ERROR pe.com.bn.util.MapperObject  - Error Campo: B12_FECHA_VENCIMIENTO_TARJETA
+2024-11-25 07:40:00,570 ERROR pe.com.bn.util.MapperObject  - Unparseable date: "00000000"
+2024-11-25 07:40:00,570 ERROR pe.com.bn.util.MapperObject  - Error Campo: B12_FECHA_APERTURA_TARJETA
+2024-11-25 07:40:00,570 ERROR pe.com.bn.util.MapperObject  - Unparseable date: "00000000"
+2024-11-25 07:40:00,570 ERROR pe.com.bn.util.MapperObject  - Error Campo: B12_FECHA_VENCIMIENTO_TARJETA
+2024-11-25 07:40:00,573 INFO  pe.com.bn.service.CargaTxtService  - Procesamiento de archivo completado.
+2024-11-25 07:40:00,573 INFO  pe.com.bn.service.CargaTxtService  - Total de registros esperados: 371
+2024-11-25 07:40:00,573 INFO  pe.com.bn.service.CargaTxtService  - Total de registros procesados correctamente: 371
+2024-11-25 07:40:00,573 INFO  pe.com.bn.service.CargaTxtService  - Total de registros fallidos: 0
+2024-11-25 07:40:00,573 INFO  pe.com.bn.Main.MainProcess  - Proceso completado exitosamente.

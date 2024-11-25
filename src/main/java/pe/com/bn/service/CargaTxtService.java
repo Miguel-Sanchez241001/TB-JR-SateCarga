@@ -162,7 +162,8 @@ public class CargaTxtService {
                     dtoLoteMC.getCodEntidad(),
                     dtoLoteMC.getNumCuenta(),
                     dtoLoteMC.getFecApeCta(),
-                    dtoLoteMC.getBlq1Cta()
+                    dtoLoteMC.getBlq1Cta(),
+                    dtoLoteMC.getSaldo()
             };
         }
     }

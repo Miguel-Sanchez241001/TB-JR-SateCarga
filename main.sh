@@ -1,7 +1,8 @@
 #!/bin/bash
 
 # Definir los parámetros
-DB_CONNECTION="bn_sate/bn_sate@//10.7.12.177:1521/orades"
+#DB_CONNECTION="bn_sate/bn_sate@//10.7.12.177:1521/orades"
+DB_CONNECTION="bn_sate/bn_sate@//localhost:1521/XE"
 PATH_FILE="logs/FICTA19241024.txt"
 PATH_FILE_FAIL="logs/FICTA19241024_fail.txt"
 TYPE_PROCESS="1"

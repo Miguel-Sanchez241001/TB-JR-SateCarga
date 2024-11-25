@@ -24,6 +24,7 @@ public enum Bnsate12RptaMcTemp {
     NUM_CUENTA("B12_NUMERO_CUENTA", 7, 18, true),
     FEC_APE_CTA("B12_FECHA_APERTURA_CUENTA", 117, 7, true),
     BLQ1_CTA("B12_BLOQUEO_1_CUENTA", 111, 0, true),
+    SALDO("B12_LINEA_CREDITO", 229, 12, true),
 
     BLQ1_TARJ("B12_BLOQUEO_1_TARJETA", 140, 150, true),
     COD_BLQ("B12_CODIGO_BLOQUEO", 111, 0, true),
@@ -79,6 +80,7 @@ public enum Bnsate12RptaMcTemp {
         mcFitar.add(NUM_CUENTA);
         mcFitar.add(FEC_APE_CTA);
         mcFitar.add(BLQ1_CTA);
+        mcFitar.add(SALDO);
         return mcFitar;
     }
 

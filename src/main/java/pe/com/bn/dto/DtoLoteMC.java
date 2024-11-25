@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.math.BigDecimal;
 import java.sql.Date;
 
 @Data
@@ -35,11 +36,12 @@ public class DtoLoteMC {
     private Date fecIniLin;
     private Date fecFinLin;
     private String codEntidad;
-
+    private BigDecimal saldo;
     @Override
     public String toString() {
         return "DtoLoteMC{" +
                 "numTarj='" + numTarj + '\'' +
+                "saldo='" + saldo + '\'' +
                 ", fecVencTarj=" + fecVencTarj +
                 ", fecApeTarj=" + fecApeTarj +
                 ", apellidos='" + apellidos + '\'' +
