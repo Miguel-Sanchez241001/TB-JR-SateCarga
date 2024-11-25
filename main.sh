@@ -1,10 +1,10 @@
 #!/bin/bash
 
 # Definir los parámetros
-DB_CONNECTION="bn_sate/bn_sate@//10.7.12.177:1521/orades"
-PATH_FILE="logs/TTPHAB_20240828_01_MEF.TXT"
-PATH_FILE_FAIL="logs/TTPHAB_20240828_01_MEF_FIAL.TXT"
-TYPE_PROCESS="2"
+DB_CONNECTION="bn_sate/bn_sate@//localhost:1521/XE"
+PATH_FILE="logs/FICTA19240301.txt"
+PATH_FILE_FAIL="logs/FICTA_FIAL.TXT"
+TYPE_PROCESS="1"
 TYPE_PROCESSMC="FICTA"
 # Ejecutar el JAR con los parámetros
 OUTPUT=$(java -Dlog4j.configuration=file:log4j.properties -jar satecarga.jar "$DB_CONNECTION" "$PATH_FILE" "$PATH_FILE_FAIL"  "$TYPE_PROCESS" "$TYPE_PROCESSMC")
