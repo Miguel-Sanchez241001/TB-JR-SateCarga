@@ -1,9 +1,9 @@
 #!/bin/bash
 
 # Definir los parámetros
-DB_CONNECTION="bn_sate/bn_sate@//localhost:1521/XE"
-PATH_FILE="logs/FICTA19240301.txt"
-PATH_FILE_FAIL="logs/FICTA_FIAL.TXT"
+DB_CONNECTION="bn_sate/bn_sate@//10.7.12.177:1521/orades"
+PATH_FILE="logs/FICTA19241024.txt"
+PATH_FILE_FAIL="logs/FICTA19241024_fail.txt"
 TYPE_PROCESS="1"
 TYPE_PROCESSMC="FICTA"
 # Ejecutar el JAR con los parámetros

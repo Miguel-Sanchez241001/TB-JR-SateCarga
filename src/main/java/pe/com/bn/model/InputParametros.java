@@ -16,6 +16,4 @@ public class InputParametros {
     private String pathLogError;
     private String typeProcess;
     private String typeProcessMC;
-
-
 }

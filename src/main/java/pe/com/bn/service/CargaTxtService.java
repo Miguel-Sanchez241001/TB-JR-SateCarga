@@ -20,6 +20,7 @@ public class CargaTxtService {
     private final MapperObject batchService;
     private File responseProccessFail;
     private File responseProccessOK;
+
     public CargaTxtService() {
         this.batchService = new MapperObject();
 
@@ -41,10 +42,10 @@ public class CargaTxtService {
 
         try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
 
-             TableType tableType = getTableType(input);
+            TableType tableType = getTableType(input);
             log.info("Tipo de proceso identificado: " + tableType);
             String line = br.readLine();
-             totalRegistrosEsperados = descripcionArchivo(line,tableType);  // Extraer el número total de registros de la cabecera
+            totalRegistrosEsperados = descripcionArchivo(line, tableType);  // Extraer el número total de registros de la cabecera
 
 
 
@@ -99,6 +100,7 @@ public class CargaTxtService {
             throw new ProcessException("Error escribiendo en Archivo Fail: " + responseProccessFail.getPath());
         }
     }
+
     private void saveFailErrorHead(String mensaje) throws ProcessException {
         try {
             // Leer todo el contenido del archivo en una lista de líneas
@@ -113,11 +115,12 @@ public class CargaTxtService {
             log.error("Error escribiendo en primera fila del Archivo Fail: " + e.getMessage());
             throw new ProcessException("Error escribiendo en primera fila del Archivo Fail: " + responseProccessFail.getPath());
         }
-        }
+    }
+
     private void initFailResponse(InputParametros input) throws ProcessException {
         try {
             this.responseProccessFail = new File(input.getPathFileFail());
-            if (!this.responseProccessFail.exists())  FileUtils.touch(this.responseProccessFail);
+            if (!this.responseProccessFail.exists()) FileUtils.touch(this.responseProccessFail);
         } catch (IOException e) {
             log.error("Error Archivo - Fail: " + e.getMessage());
             log.error("Error PROCESO: " + getTableType(input).getTableName());
@@ -197,7 +200,7 @@ public class CargaTxtService {
                     log.info(cabecera.getName() + ": " + valor);
                 }
             }
-        }else{
+        } else {
             for (Cabeceras cabecera : Cabeceras.getCabeceraMC()) {
                 int startIndex = cabecera.getPosicionIncial() - 1;
                 int endIndex = startIndex + cabecera.getTamaño();
@@ -218,9 +221,6 @@ public class CargaTxtService {
                 }
             }
         }
-
-
-
 
         return totalRegistros;  // Retornar el número total de registros
     }

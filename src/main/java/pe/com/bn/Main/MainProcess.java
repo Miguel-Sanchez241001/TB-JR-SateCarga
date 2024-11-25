@@ -16,8 +16,8 @@ public class MainProcess {
 
         // Verificación del número de argumentos
         if (args.length < 5) {
-            log.error("Número insuficiente de argumentos. Se requieren 6 argumentos: " +
-                    "<urlConection> <pathFile>  <typeProcess> <typeProcessMC>");
+            log.error("Número insuficiente de argumentos. Se requieren 5 argumentos: " +
+                    "<urlConection> <pathFile> <pathFileError>  <typeProcess> <typeProcessMC>");
             System.out.println("FAILED");
             System.exit(1); // Salida con código 1 indicando error
         }
