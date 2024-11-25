@@ -18,7 +18,6 @@ public class MapperObject {
 
 
     public <T> T getMapperObjectGeneric(String line, String typeProcess, String typeProcessMC) throws ProcessException {
-        // Verifica si el tipo de proceso coincide
         if (typeProcess.equals(TableType.RPTA_MEF_TEMP.getTableNumber())) {
             DtoLoteMEF dtoLoteMEF = new DtoLoteMEF();
 
@@ -95,9 +94,9 @@ public class MapperObject {
                                 log.error(e.getMessage());
                                 log.error("Error Campo: ".concat(Bnsate12RptaMcTemp.FEC_VENC_TARJ.getColumnName()));
                                 //throw new ProcessException("Error en trama :" + line);
+                                dtoLoteMC.setFecVencTarj(null);
                             }
-                            dtoLoteMC.setFecApeTarj(null);
-                            break;
+                             break;
                         case FEC_APE_TARJ:
                             try {
                                 dtoLoteMC.setFecApeTarj(QueryUtil.convertStringToSqlDate(fieldValue));
@@ -105,8 +104,8 @@ public class MapperObject {
                                 log.error(e.getMessage());
                                 log.error("Error Campo: ".concat(Bnsate12RptaMcTemp.FEC_APE_TARJ.getColumnName()));
                                 //throw new ProcessException("Error en trama :" + line);
+                                dtoLoteMC.setFecApeTarj(null);
                             }
-                            dtoLoteMC.setFecApeTarj(null);
                             break;
                         case TIPO_DOC:
                             dtoLoteMC.setTipoDoc(fieldValue);
@@ -127,25 +126,6 @@ public class MapperObject {
                             BigDecimal bigDecimalValue = new BigDecimal(fieldValue);
                             dtoLoteMC.setSaldo(bigDecimalValue);
                             break;
-                        case TIPO_RESP:
-                            if (dtoLoteMC.getSaldo() != null && dtoLoteMC.getSaldo().compareTo(BigDecimal.ZERO) == 0
-                                    && dtoLoteMC.getFecApeTarj() != null) {
-                                // Saldo es 0 y fecha de tarjeta no es nula
-                                dtoLoteMC.setTipoResp("0");
-                            } else if (dtoLoteMC.getSaldo() != null && dtoLoteMC.getSaldo().compareTo(BigDecimal.ZERO) > 0
-                                    && dtoLoteMC.getFecApeTarj() != null) {
-                                // Saldo es mayor a 0 y fecha de tarjeta no es nula
-                                dtoLoteMC.setTipoResp("1");
-                            } else if (dtoLoteMC.getSaldo() != null && dtoLoteMC.getSaldo().compareTo(BigDecimal.ZERO) > 0
-                                    && dtoLoteMC.getFecApeTarj() == null) {
-                                // Saldo es mayor a 0 y fecha de tarjeta es nula
-                                dtoLoteMC.setTipoResp("2");
-                            } else {
-                                // Caso por defecto (si es necesario)
-                                dtoLoteMC.setTipoResp("3"); // Puedes cambiarlo según sea necesario
-                            }
-                            break;
-
                         case NUM_TARJ:
                             dtoLoteMC.setNumTarj(fieldValue);
                             break;
@@ -167,13 +147,31 @@ public class MapperObject {
                                 log.error(e.getMessage());
                                 log.error("Error Campo: ".concat(Bnsate12RptaMcTemp.FEC_APE_CTA.getColumnName()));
                                 //throw new ProcessException("Error en trama :" + line);
+                                dtoLoteMC.setFecApeCta(null);
                             }
-                            dtoLoteMC.setFecApeTarj(null);
                             break;
                         case BLQ1_CTA:
                             dtoLoteMC.setBlq1Cta(fieldValue);
                             break;
                     }
+
+                }
+                if (dtoLoteMC.getSaldo() != null && dtoLoteMC.getSaldo().compareTo(BigDecimal.ZERO) == 0
+                        && dtoLoteMC.getFecApeTarj() != null && dtoLoteMC.getFecVencTarj() != null) {
+                    // Saldo es 0 y fecha de tarjeta no es nula
+                    dtoLoteMC.setTipoResp("0");
+                } else if (dtoLoteMC.getSaldo() != null && dtoLoteMC.getSaldo().compareTo(BigDecimal.ZERO) > 0
+                        && dtoLoteMC.getFecApeTarj() != null && dtoLoteMC.getFecVencTarj() != null) {
+                    // Saldo es mayor a 0 y fecha de tarjeta no es nula
+                    dtoLoteMC.setTipoResp("1");
+                } else if (dtoLoteMC.getSaldo() != null && dtoLoteMC.getSaldo().compareTo(BigDecimal.ZERO) > 0
+                        && dtoLoteMC.getFecApeTarj() == null && dtoLoteMC.getFecVencTarj() == null) {
+                    // Saldo es mayor a 0 y fecha de tarjeta es nula
+                    dtoLoteMC.setTipoResp("2");
+                } else {
+                    // Caso por defecto (si es necesario)
+                    dtoLoteMC.setTipoResp("3"); // Puedes cambiarlo según sea necesario
+                     throw new ProcessException("Error en trama :" + line);
                 }
             } else if (typeProcessMC.equals("FITAR")) {
 
