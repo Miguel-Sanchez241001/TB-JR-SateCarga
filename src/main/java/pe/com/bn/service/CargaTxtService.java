@@ -7,6 +7,7 @@ import pe.com.bn.Enum.TableType;
 import pe.com.bn.customexception.ProcessException;
 import pe.com.bn.dto.DtoLoteMC;
 import pe.com.bn.dto.DtoLoteMEF;
+import pe.com.bn.dto.DtoLoteMefComplete;
 import pe.com.bn.model.InputParametros;
 import pe.com.bn.util.DbUtil;
 import pe.com.bn.util.MapperObject;
@@ -45,15 +46,16 @@ public class CargaTxtService {
             TableType tableType = getTableType(input);
             log.info("Tipo de proceso identificado: " + tableType);
             String line = br.readLine();
-            totalRegistrosEsperados = descripcionArchivo(line, tableType);  // Extraer el número total de registros de la cabecera
+            totalRegistrosEsperados = descripcionArchivo(line, tableType);
+            DtoLoteMefComplete loteComplete = descripcionArchivoHeader(line, tableType);
+            if (loteComplete != null){
 
-
-
-            // Genera la consulta de inserción para la tabla correspondiente
+                return;
+            }
             String sql = QueryUtil.generateInsertQuery(tableType);
             log.debug("Consulta SQL de inserción generada para la tabla: " + tableType);
 
-            // Procesar cada línea del archivo
+
             while ((line = br.readLine()) != null) {
                 Object dtoGenerico = null;
                 try {
@@ -61,8 +63,6 @@ public class CargaTxtService {
                     log.debug("Línea procesada y objeto DTO generado correctamente.");
                     Object[] params = getInsertParams(dtoGenerico, tableType);
 
-
-                    // Ejecutar la inserción en la base de datos
                     int rowsAffected = dbUtil.insert(sql, params);
                     if (rowsAffected > 0) {
                         totalRegistrosProcesados++;
@@ -89,6 +89,19 @@ public class CargaTxtService {
             log.error("Error durante el procesamiento del archivo: " + e.getMessage(), e);
             throw new ProcessException("Error al procesar el archivo: " + e.getMessage());
         }
+    }
+
+    private DtoLoteMefComplete descripcionArchivoHeader(String line, TableType tableType) throws ProcessException {
+        if (!tableType.equals(TableType.RPTA_MEF_TEMP)){
+            return null;
+        }
+        try{
+            DtoLoteMefComplete loteMef = this.batchService.getMapperObject(line);
+            return loteMef;
+        }catch (Exception e){
+             throw new ProcessException(e.getMessage());
+        }
+
     }
 
     private void saveFailError(String mensaje) throws ProcessException {
@@ -133,8 +146,7 @@ public class CargaTxtService {
         if (TableType.RPTA_MEF_TEMP.equals(tableType)) {
             DtoLoteMEF dtoLoteMEF = (DtoLoteMEF) dtoGenerico;
             return new Object[]{
-                    dtoLoteMEF.getSecOperacion(),
-                    dtoLoteMEF.getTipoOperacion(),
+                    dtoLoteMEF.getSecOperacion(), dtoLoteMEF.getTipoOperacion(),
                     dtoLoteMEF.getRucMefTemp(),
                     dtoLoteMEF.getCuentaCargo(),
                     dtoLoteMEF.getFecInicioAut(),
@@ -181,16 +193,16 @@ public class CargaTxtService {
 
     private int descripcionArchivo(String line, TableType tableType) {
         int totalRegistros = 0;
-        if (TableType.RPTA_MEF_TEMP.equals(tableType)) {
-            for (Cabeceras cabecera : Cabeceras.getCabeceraMEF()) {
+        List<Cabeceras> cabeceraTemp = TableType.RPTA_MEF_TEMP.equals(tableType)? Cabeceras.getCabeceraMEF() : Cabeceras.getCabeceraMC();
+
+            for (Cabeceras cabecera : cabeceraTemp) {
                 int startIndex = cabecera.getPosicionIncial() - 1;
                 int endIndex = startIndex + cabecera.getTamaño();
                 String valor = line.substring(startIndex, endIndex).trim();
 
                 // Manejar el caso específico de la fecha
                 if ("Fecha".equals(cabecera.getName())) {
-                    String fecha = valor;
-                    String fechaFormateada = fecha.substring(0, 4) + "-" + fecha.substring(4, 6) + "-" + fecha.substring(6, 8);
+                    String fechaFormateada = valor.substring(0, 4) + "-" + valor.substring(4, 6) + "-" + valor.substring(6, 8);
                     log.info(cabecera.getName() + ": " + fechaFormateada);
                 }
                 // Manejar el caso específico de los registros
@@ -201,27 +213,9 @@ public class CargaTxtService {
                     log.info(cabecera.getName() + ": " + valor);
                 }
             }
-        } else {
-            for (Cabeceras cabecera : Cabeceras.getCabeceraMC()) {
-                int startIndex = cabecera.getPosicionIncial() - 1;
-                int endIndex = startIndex + cabecera.getTamaño();
-                String valor = line.substring(startIndex, endIndex).trim();
 
-                // Manejar el caso específico de la fecha
-                if ("Fecha".equals(cabecera.getName())) {
-                    String fecha = valor;
-                    String fechaFormateada = fecha.substring(0, 4) + "-" + fecha.substring(4, 6) + "-" + fecha.substring(6, 8);
-                    log.info(cabecera.getName() + ": " + fechaFormateada);
-                }
-                // Manejar el caso específico de los registros
-                else if ("Regitros".equals(cabecera.getName())) {
-                    totalRegistros = Integer.parseInt(valor);  // Convertir el valor a entero
-                    log.info(cabecera.getName() + ": " + totalRegistros);
-                } else {
-                    log.info(cabecera.getName() + ": " + valor);
-                }
-            }
-        }
+
+
 
         return totalRegistros;  // Retornar el número total de registros
     }

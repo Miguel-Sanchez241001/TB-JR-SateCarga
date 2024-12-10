@@ -7,6 +7,7 @@ import pe.com.bn.Enum.TableType;
 import pe.com.bn.customexception.ProcessException;
 import pe.com.bn.dto.DtoLoteMC;
 import pe.com.bn.dto.DtoLoteMEF;
+import pe.com.bn.dto.DtoLoteMefComplete;
 
 import java.math.BigDecimal;
 import java.sql.Date;
@@ -14,7 +15,6 @@ import java.text.ParseException;
 
 public class MapperObject {
     private static final Logger log = Logger.getLogger(MapperObject.class);
-
 
 
     public <T> T getMapperObjectGeneric(String line, String typeProcess, String typeProcessMC) throws ProcessException {
@@ -84,7 +84,7 @@ public class MapperObject {
             DtoLoteMC dtoLoteMC = new DtoLoteMC();
             if (typeProcessMC.equals("FICTA")) {
                 for (Bnsate12RptaMcTemp field : Bnsate12RptaMcTemp.values()) {
-                    String fieldValue = line.substring(field.getStart()-1, field.getStart()+field.getEnd()).trim();
+                    String fieldValue = line.substring(field.getStart() - 1, field.getStart() + field.getEnd()).trim();
 
                     switch (field) {
                         case FEC_VENC_TARJ:
@@ -96,7 +96,7 @@ public class MapperObject {
                                 //throw new ProcessException("Error en trama :" + line);
                                 dtoLoteMC.setFecVencTarj(null);
                             }
-                             break;
+                            break;
                         case FEC_APE_TARJ:
                             try {
                                 dtoLoteMC.setFecApeTarj(QueryUtil.convertStringToSqlDate(fieldValue));
@@ -171,7 +171,7 @@ public class MapperObject {
                 } else {
                     // Caso por defecto (si es necesario)
                     dtoLoteMC.setTipoResp("3"); // Puedes cambiarlo según sea necesario
-                     throw new ProcessException("Error en trama :" + line);
+                    throw new ProcessException("Error en trama :" + line);
                 }
             } else if (typeProcessMC.equals("FITAR")) {
 
@@ -183,7 +183,9 @@ public class MapperObject {
 
             return (T) dtoLoteMC;
         }
-
-
     }
-}
+
+        public DtoLoteMefComplete getMapperObject(String line){
+            return null;
+        }
+    }
