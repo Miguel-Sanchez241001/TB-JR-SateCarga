@@ -1,7 +1,9 @@
 package pe.com.bn.util;
 
 import org.apache.commons.dbutils.QueryRunner;
+import org.apache.commons.dbutils.handlers.ScalarHandler;
 
+import java.math.BigDecimal;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -98,6 +100,20 @@ public class DbUtil {
             return result;
         } catch (SQLException e) {
             connection.rollback(); // Revertir la transacción en caso de error
+            throw e;
+        }
+    }
+
+
+    public int ejecutarCount(String sql, Object... params) throws SQLException {
+        QueryRunner runner = new QueryRunner();
+        try {
+            // Ejecuta la consulta con ScalarHandler para obtener el resultado
+            BigDecimal result = runner.query(connection, sql, new ScalarHandler<BigDecimal>(), params);
+            connection.commit(); // Confirmar la transacción
+            return result != null ? result.intValue() : 0; // Retorna el valor como int
+        } catch (SQLException e) {
+            connection.rollback(); // Revertir en caso de error
             throw e;
         }
     }

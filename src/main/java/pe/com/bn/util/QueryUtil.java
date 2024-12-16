@@ -3,6 +3,8 @@ package pe.com.bn.util;
 import pe.com.bn.Enum.Bnsate12RptaMcTemp;
 import pe.com.bn.Enum.Bnsate13RptaMefTemp;
 import pe.com.bn.Enum.TableType;
+import pe.com.bn.dto.DtoLoteMC;
+import pe.com.bn.dto.DtoLoteMEF;
 
 import java.sql.Date;
 import java.text.ParseException;
@@ -55,6 +57,7 @@ public class QueryUtil {
 
         return sql.toString();
     }
+
     public static Date convertStringToSqlDate(String dateStr) throws ParseException {
         // Define el formato de la fecha
         SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd");
@@ -64,4 +67,44 @@ public class QueryUtil {
         // Convierte java.util.Date a java.sql.Date
         return new java.sql.Date(date.getTime());
     }
+
+    public static  Object[] getInsertParams(Object dtoGenerico, TableType tableType) {
+        if (TableType.RPTA_MEF_TEMP.equals(tableType)) {
+            DtoLoteMEF dtoLoteMEF = (DtoLoteMEF) dtoGenerico;
+            return new Object[]{
+                    dtoLoteMEF.getSecOperacion(), dtoLoteMEF.getTipoOperacion(),
+                    dtoLoteMEF.getRucMefTemp(),
+                    dtoLoteMEF.getCuentaCargo(),
+                    dtoLoteMEF.getFecInicioAut(),
+                    dtoLoteMEF.getFecFinAut(),
+                    dtoLoteMEF.getTipoTarjeta(),
+                    dtoLoteMEF.getMoneda(),
+                    dtoLoteMEF.getImporte(),
+                    dtoLoteMEF.getTipoDocumento(),
+                    dtoLoteMEF.getNumDocumento(),
+                    dtoLoteMEF.getFechaRegistro()
+            };
+        } else {
+            DtoLoteMC dtoLoteMC = (DtoLoteMC) dtoGenerico;
+            return new Object[]{
+                    dtoLoteMC.getTipoDoc(),
+                    dtoLoteMC.getNumDoc(),
+                    dtoLoteMC.getApellidos(),
+                    dtoLoteMC.getNombre(),
+                    dtoLoteMC.getFecReg(),
+                    dtoLoteMC.getCodProd(),
+                    dtoLoteMC.getNumTarj(),
+                    dtoLoteMC.getFecApeTarj(),
+                    dtoLoteMC.getFecVencTarj(),
+                    dtoLoteMC.getTipoResp(),
+                    dtoLoteMC.getCodEntidad(),
+                    dtoLoteMC.getNumCuenta(),
+                    dtoLoteMC.getFecApeCta(),
+                    dtoLoteMC.getBlq1Cta(),
+                    dtoLoteMC.getSaldo()
+            };
+        }
+    }
+
+
 }

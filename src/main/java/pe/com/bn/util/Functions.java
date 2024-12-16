@@ -1,5 +1,8 @@
 package pe.com.bn.util;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public class Functions {
 
     /**
@@ -86,5 +89,8 @@ public class Functions {
     public static String toLowerCase(String input) {
         return input != null ? input.toLowerCase() : null;
     }
+
+
+
 }
 

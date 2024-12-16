@@ -13,7 +13,7 @@ import java.util.List;
 public class DtoLoteMefComplete {
     private String numeroLote;
     private String fechaGeneracion;
-    private String cantidadRegistros;
+    private BigDecimal cantidadRegistros;
     private BigDecimal sumaImportes;
     private List<DtoLoteMEF> listaRegistros;
 }
