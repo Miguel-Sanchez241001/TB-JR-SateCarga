@@ -1,5 +1,11 @@
 package pe.com.bn.util;
 
+import pe.com.bn.Enum.TableType;
+import pe.com.bn.customexception.ProcessException;
+import pe.com.bn.dto.DtoLoteMC;
+import pe.com.bn.dto.DtoLoteMEF;
+import pe.com.bn.model.InputParametros;
+
 public class Functions {
 
     /**
@@ -86,5 +92,62 @@ public class Functions {
     public static String toLowerCase(String input) {
         return input != null ? input.toLowerCase() : null;
     }
+
+
+
+//    public static TableType getTableType() throws ProcessException {
+//        InputParametros input = InputParametros.getInstance();
+//
+//        if ("1".equals(input.getTypeProcess())) {
+//            return TableType.RPTA_MC_TEMP;
+//        } else if ("2".equals(input.getTypeProcess())) {
+//            return TableType.RPTA_MEF_TEMP;
+//        } else {
+//            throw new ProcessException("Tipo de proceso no soportado.");
+//        }
+//    }
+
+
+
+    public static Object[] getInsertParams(Object dtoGenerico, TableType tableType) {
+        if (TableType.RPTA_MEF_TEMP.equals(tableType)) {
+            DtoLoteMEF dtoLoteMEF = (DtoLoteMEF) dtoGenerico;
+            return new Object[]{
+                    dtoLoteMEF.getSecOperacion(), dtoLoteMEF.getTipoOperacion(),
+                    dtoLoteMEF.getRucMefTemp(),
+                    dtoLoteMEF.getCuentaCargo(),
+                    dtoLoteMEF.getFecInicioAut(),
+                    dtoLoteMEF.getFecFinAut(),
+                    dtoLoteMEF.getTipoTarjeta(),
+                    dtoLoteMEF.getMoneda(),
+                    dtoLoteMEF.getImporte(),
+                    dtoLoteMEF.getTipoDocumento(),
+                    dtoLoteMEF.getNumDocumento(),
+                    dtoLoteMEF.getFechaRegistro()
+            };
+        } else {
+            DtoLoteMC dtoLoteMC = (DtoLoteMC) dtoGenerico;
+            return new Object[]{
+                    dtoLoteMC.getTipoDoc(),
+                    dtoLoteMC.getNumDoc(),
+                    dtoLoteMC.getApellidos(),
+                    dtoLoteMC.getNombre(),
+                    dtoLoteMC.getFecReg(),
+                    dtoLoteMC.getCodProd(),
+                    dtoLoteMC.getNumTarj(),
+                    dtoLoteMC.getFecApeTarj(),
+                    dtoLoteMC.getFecVencTarj(),
+                    dtoLoteMC.getTipoResp(),
+                    dtoLoteMC.getCodEntidad(),
+                    dtoLoteMC.getNumCuenta(),
+                    dtoLoteMC.getFecApeCta(),
+                    dtoLoteMC.getBlq1Cta(),
+                    dtoLoteMC.getSaldo()
+            };
+        }
+    }
+
+
+
 }
 

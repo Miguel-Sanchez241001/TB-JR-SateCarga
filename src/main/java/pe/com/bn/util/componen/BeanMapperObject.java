@@ -1,4 +1,4 @@
-package pe.com.bn.util;
+package pe.com.bn.util.componen;
 
 import org.apache.log4j.Logger;
 import pe.com.bn.Enum.Bnsate12RptaMcTemp;
@@ -8,13 +8,14 @@ import pe.com.bn.customexception.ProcessException;
 import pe.com.bn.dto.DtoLoteMC;
 import pe.com.bn.dto.DtoLoteMEF;
 import pe.com.bn.dto.DtoLoteMefComplete;
+import pe.com.bn.util.QueryUtil;
 
 import java.math.BigDecimal;
 import java.sql.Date;
 import java.text.ParseException;
 
-public class MapperObject {
-    private static final Logger log = Logger.getLogger(MapperObject.class);
+public class BeanMapperObject {
+    private static final Logger log = Logger.getLogger(BeanMapperObject.class);
 
 
     public <T> T getMapperObjectGeneric(String line, String typeProcess, String typeProcessMC) throws ProcessException {

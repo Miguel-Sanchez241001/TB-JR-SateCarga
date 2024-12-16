@@ -22,7 +22,7 @@ public class MainProcess {
             System.exit(1); // Salida con código 1 indicando error
         }
 
-        InputParametros inputParameter = new InputParametros();
+        InputParametros inputParameter = InputParametros.getInstance();
         inputParameter.setUrlConection(args[0]);
         inputParameter.setPathFile(args[1]);
         inputParameter.setPathFileFail(args[2]);
