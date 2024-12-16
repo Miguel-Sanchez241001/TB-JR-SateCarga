@@ -1,0 +1,120 @@
+2024-12-16 15:46:54,400 INFO  pe.com.bn.Main.MainProcess  - Parámetros validados correctamente.
+2024-12-16 15:46:54,400 INFO  pe.com.bn.Main.MainProcess  - InputParametros(urlConection=bn_sate/bn_sate@//10.7.12.177:1521/orades, pathFile=../../sate/data/TTPHAB_20241206_01_MEF.TXT, pathFileFail=../../sate/data/MEF_FAIL/TTPAUT_20241026_VAL_NN_BN.txt, typeProcess=2, typeProcessMC=)
+2024-12-16 15:46:54,400 INFO  pe.com.bn.Main.MainProcess  - Inicio del proceso con los parámetros proporcionados.
+2024-12-16 15:46:54,401 INFO  pe.com.bn.Main.MainProcess  - InputParametros(urlConection=bn_sate/bn_sate@//10.7.12.177:1521/orades, pathFile=../../sate/data/TTPHAB_20241206_01_MEF.TXT, pathFileFail=../../sate/data/MEF_FAIL/TTPAUT_20241026_VAL_01_BN.txt, typeProcess=2, typeProcessMC=)
+2024-12-16 15:46:54,940 INFO  pe.com.bn.service.CargaTxtService  - Tipo de proceso identificado: RPTA_MEF_TEMP
+2024-12-16 15:46:54,942 INFO  pe.com.bn.service.CargaTxtService  - Regitros: 3
+2024-12-16 15:46:54,942 INFO  pe.com.bn.service.CargaTxtService  - Fecha: 2024-12-06
+2024-12-16 15:46:55,121 INFO  pe.com.bn.Main.MainProcess  - Proceso completado exitosamente.
+2024-12-16 15:49:07,941 INFO  pe.com.bn.Main.MainProcess  - Parámetros validados correctamente.
+2024-12-16 15:49:07,942 INFO  pe.com.bn.Main.MainProcess  - InputParametros(urlConection=bn_sate/bn_sate@//10.7.12.177:1521/orades, pathFile=../../sate/data/TTPHAB_20241206_01_MEF.TXT, pathFileFail=../../sate/data/MEF_FAIL/TTPAUT_20241026_VAL_NN_BN.txt, typeProcess=2, typeProcessMC=)
+2024-12-16 15:49:07,942 INFO  pe.com.bn.Main.MainProcess  - Inicio del proceso con los parámetros proporcionados.
+2024-12-16 15:49:07,942 INFO  pe.com.bn.Main.MainProcess  - InputParametros(urlConection=bn_sate/bn_sate@//10.7.12.177:1521/orades, pathFile=../../sate/data/TTPHAB_20241206_01_MEF.TXT, pathFileFail=../../sate/data/MEF_FAIL/TTPAUT_20241026_VAL_01_BN.txt, typeProcess=2, typeProcessMC=)
+2024-12-16 15:49:08,511 INFO  pe.com.bn.service.CargaTxtService  - Tipo de proceso identificado: RPTA_MEF_TEMP
+2024-12-16 15:49:08,512 INFO  pe.com.bn.service.CargaTxtService  - Regitros: 3
+2024-12-16 15:49:08,512 INFO  pe.com.bn.service.CargaTxtService  - Fecha: 2024-12-06
+2024-12-16 15:49:08,708 INFO  pe.com.bn.Main.MainProcess  - Proceso completado exitosamente.
+2024-12-16 15:51:22,393 INFO  pe.com.bn.Main.MainProcess  - Parámetros validados correctamente.
+2024-12-16 15:51:22,394 INFO  pe.com.bn.Main.MainProcess  - InputParametros(urlConection=bn_sate/bn_sate@//10.7.12.177:1521/orades, pathFile=../../sate/data/TTPHAB_20241206_01_MEF.TXT, pathFileFail=../../sate/data/MEF_FAIL/TTPAUT_20241026_VAL_NN_BN.txt, typeProcess=2, typeProcessMC=)
+2024-12-16 15:51:22,394 INFO  pe.com.bn.Main.MainProcess  - Inicio del proceso con los parámetros proporcionados.
+2024-12-16 15:51:22,394 INFO  pe.com.bn.Main.MainProcess  - InputParametros(urlConection=bn_sate/bn_sate@//10.7.12.177:1521/orades, pathFile=../../sate/data/TTPHAB_20241206_01_MEF.TXT, pathFileFail=../../sate/data/MEF_FAIL/TTPAUT_20241026_VAL_01_BN.txt, typeProcess=2, typeProcessMC=)
+2024-12-16 15:51:23,025 INFO  pe.com.bn.service.CargaTxtService  - Tipo de proceso identificado: RPTA_MEF_TEMP
+2024-12-16 15:51:23,026 INFO  pe.com.bn.service.CargaTxtService  - Regitros: 3
+2024-12-16 15:51:23,026 INFO  pe.com.bn.service.CargaTxtService  - Fecha: 2024-12-06
+2024-12-16 15:51:23,211 INFO  pe.com.bn.Main.MainProcess  - Proceso completado exitosamente.
+2024-12-16 15:53:10,351 INFO  pe.com.bn.Main.MainProcess  - Parámetros validados correctamente.
+2024-12-16 15:53:10,351 INFO  pe.com.bn.Main.MainProcess  - InputParametros(urlConection=bn_sate/bn_sate@//10.7.12.177:1521/orades, pathFile=../../sate/data/TTPHAB_20241206_01_MEF.TXT, pathFileFail=../../sate/data/MEF_FAIL/TTPAUT_20241026_VAL_NN_BN.txt, typeProcess=2, typeProcessMC=)
+2024-12-16 15:53:10,351 INFO  pe.com.bn.Main.MainProcess  - Inicio del proceso con los parámetros proporcionados.
+2024-12-16 15:53:10,352 INFO  pe.com.bn.Main.MainProcess  - InputParametros(urlConection=bn_sate/bn_sate@//10.7.12.177:1521/orades, pathFile=../../sate/data/TTPHAB_20241206_01_MEF.TXT, pathFileFail=../../sate/data/MEF_FAIL/TTPAUT_20241026_VAL_01_BN.txt, typeProcess=2, typeProcessMC=)
+2024-12-16 15:53:10,909 INFO  pe.com.bn.service.CargaTxtService  - Tipo de proceso identificado: RPTA_MEF_TEMP
+2024-12-16 15:53:10,910 INFO  pe.com.bn.service.CargaTxtService  - Regitros: 3
+2024-12-16 15:53:10,910 INFO  pe.com.bn.service.CargaTxtService  - Fecha: 2024-12-06
+2024-12-16 15:53:11,084 INFO  pe.com.bn.Main.MainProcess  - Proceso completado exitosamente.
+2024-12-16 15:54:24,202 INFO  pe.com.bn.Main.MainProcess  - Parámetros validados correctamente.
+2024-12-16 15:54:24,203 INFO  pe.com.bn.Main.MainProcess  - InputParametros(urlConection=bn_sate/bn_sate@//10.7.12.177:1521/orades, pathFile=../../sate/data/TTPHAB_20241206_01_MEF.TXT, pathFileFail=../../sate/data/MEF_FAIL/TTPAUT_20241026_VAL_NN_BN.txt, typeProcess=2, typeProcessMC=)
+2024-12-16 15:54:24,203 INFO  pe.com.bn.Main.MainProcess  - Inicio del proceso con los parámetros proporcionados.
+2024-12-16 15:54:24,203 INFO  pe.com.bn.Main.MainProcess  - InputParametros(urlConection=bn_sate/bn_sate@//10.7.12.177:1521/orades, pathFile=../../sate/data/TTPHAB_20241206_01_MEF.TXT, pathFileFail=../../sate/data/MEF_FAIL/TTPAUT_20241026_VAL_01_BN.txt, typeProcess=2, typeProcessMC=)
+2024-12-16 15:54:24,779 INFO  pe.com.bn.service.CargaTxtService  - Tipo de proceso identificado: RPTA_MEF_TEMP
+2024-12-16 15:54:24,780 INFO  pe.com.bn.service.CargaTxtService  - Regitros: 3
+2024-12-16 15:54:24,780 INFO  pe.com.bn.service.CargaTxtService  - Fecha: 2024-12-06
+2024-12-16 15:54:24,966 INFO  pe.com.bn.Main.MainProcess  - Proceso completado exitosamente.
+2024-12-16 15:55:53,066 INFO  pe.com.bn.Main.MainProcess  - Parámetros validados correctamente.
+2024-12-16 15:55:53,067 INFO  pe.com.bn.Main.MainProcess  - InputParametros(urlConection=bn_sate/bn_sate@//10.7.12.177:1521/orades, pathFile=../../sate/data/TTPHAB_20241206_01_MEF.TXT, pathFileFail=../../sate/data/MEF_FAIL/TTPAUT_20241026_VAL_NN_BN.txt, typeProcess=2, typeProcessMC=)
+2024-12-16 15:55:53,067 INFO  pe.com.bn.Main.MainProcess  - Inicio del proceso con los parámetros proporcionados.
+2024-12-16 15:55:53,067 INFO  pe.com.bn.Main.MainProcess  - InputParametros(urlConection=bn_sate/bn_sate@//10.7.12.177:1521/orades, pathFile=../../sate/data/TTPHAB_20241206_01_MEF.TXT, pathFileFail=../../sate/data/MEF_FAIL/TTPAUT_20241026_VAL_01_BN.txt, typeProcess=2, typeProcessMC=)
+2024-12-16 15:55:53,631 INFO  pe.com.bn.service.CargaTxtService  - Tipo de proceso identificado: RPTA_MEF_TEMP
+2024-12-16 15:55:53,633 INFO  pe.com.bn.service.CargaTxtService  - Regitros: 3
+2024-12-16 15:55:53,633 INFO  pe.com.bn.service.CargaTxtService  - Fecha: 2024-12-06
+2024-12-16 15:55:53,824 INFO  pe.com.bn.Main.MainProcess  - Proceso completado exitosamente.
+2024-12-16 15:57:33,005 INFO  pe.com.bn.Main.MainProcess  - Parámetros validados correctamente.
+2024-12-16 15:57:33,006 INFO  pe.com.bn.Main.MainProcess  - InputParametros(urlConection=bn_sate/bn_sate@//10.7.12.177:1521/orades, pathFile=../../sate/data/TTPHAB_20241206_01_MEF.TXT, pathFileFail=../../sate/data/MEF_FAIL/TTPAUT_20241026_VAL_NN_BN.txt, typeProcess=2, typeProcessMC=)
+2024-12-16 15:57:33,006 INFO  pe.com.bn.Main.MainProcess  - Inicio del proceso con los parámetros proporcionados.
+2024-12-16 15:57:33,006 INFO  pe.com.bn.Main.MainProcess  - InputParametros(urlConection=bn_sate/bn_sate@//10.7.12.177:1521/orades, pathFile=../../sate/data/TTPHAB_20241206_01_MEF.TXT, pathFileFail=../../sate/data/MEF_FAIL/TTPAUT_20241026_VAL_01_BN.txt, typeProcess=2, typeProcessMC=)
+2024-12-16 15:57:33,571 INFO  pe.com.bn.service.CargaTxtService  - Tipo de proceso identificado: RPTA_MEF_TEMP
+2024-12-16 15:57:33,572 INFO  pe.com.bn.service.CargaTxtService  - Regitros: 3
+2024-12-16 15:57:33,572 INFO  pe.com.bn.service.CargaTxtService  - Fecha: 2024-12-06
+2024-12-16 15:57:33,768 INFO  pe.com.bn.Main.MainProcess  - Proceso completado exitosamente.
+2024-12-16 15:57:44,868 INFO  pe.com.bn.Main.MainProcess  - Parámetros validados correctamente.
+2024-12-16 15:57:44,869 INFO  pe.com.bn.Main.MainProcess  - InputParametros(urlConection=bn_sate/bn_sate@//10.7.12.177:1521/orades, pathFile=../../sate/data/TTPHAB_20241206_01_MEF.TXT, pathFileFail=../../sate/data/MEF_FAIL/TTPAUT_20241026_VAL_NN_BN.txt, typeProcess=2, typeProcessMC=)
+2024-12-16 15:57:44,869 INFO  pe.com.bn.Main.MainProcess  - Inicio del proceso con los parámetros proporcionados.
+2024-12-16 15:57:44,869 INFO  pe.com.bn.Main.MainProcess  - InputParametros(urlConection=bn_sate/bn_sate@//10.7.12.177:1521/orades, pathFile=../../sate/data/TTPHAB_20241206_01_MEF.TXT, pathFileFail=../../sate/data/MEF_FAIL/TTPAUT_20241026_VAL_01_BN.txt, typeProcess=2, typeProcessMC=)
+2024-12-16 15:57:45,428 INFO  pe.com.bn.service.CargaTxtService  - Tipo de proceso identificado: RPTA_MEF_TEMP
+2024-12-16 15:57:45,430 INFO  pe.com.bn.service.CargaTxtService  - Regitros: 3
+2024-12-16 15:57:45,430 INFO  pe.com.bn.service.CargaTxtService  - Fecha: 2024-12-06
+2024-12-16 15:57:45,610 INFO  pe.com.bn.Main.MainProcess  - Proceso completado exitosamente.
+2024-12-16 15:57:55,015 INFO  pe.com.bn.Main.MainProcess  - Parámetros validados correctamente.
+2024-12-16 15:57:55,015 INFO  pe.com.bn.Main.MainProcess  - InputParametros(urlConection=bn_sate/bn_sate@//10.7.12.177:1521/orades, pathFile=../../sate/data/TTPHAB_20241206_01_MEF.TXT, pathFileFail=../../sate/data/MEF_FAIL/TTPAUT_20241026_VAL_NN_BN.txt, typeProcess=2, typeProcessMC=)
+2024-12-16 15:57:55,015 INFO  pe.com.bn.Main.MainProcess  - Inicio del proceso con los parámetros proporcionados.
+2024-12-16 15:57:55,016 INFO  pe.com.bn.Main.MainProcess  - InputParametros(urlConection=bn_sate/bn_sate@//10.7.12.177:1521/orades, pathFile=../../sate/data/TTPHAB_20241206_01_MEF.TXT, pathFileFail=../../sate/data/MEF_FAIL/TTPAUT_20241026_VAL_01_BN.txt, typeProcess=2, typeProcessMC=)
+2024-12-16 15:57:55,574 INFO  pe.com.bn.service.CargaTxtService  - Tipo de proceso identificado: RPTA_MEF_TEMP
+2024-12-16 15:57:55,575 INFO  pe.com.bn.service.CargaTxtService  - Regitros: 3
+2024-12-16 15:57:55,575 INFO  pe.com.bn.service.CargaTxtService  - Fecha: 2024-12-06
+2024-12-16 15:57:55,753 INFO  pe.com.bn.Main.MainProcess  - Proceso completado exitosamente.
+2024-12-16 16:00:17,323 INFO  pe.com.bn.Main.MainProcess  - Parámetros validados correctamente.
+2024-12-16 16:00:17,324 INFO  pe.com.bn.Main.MainProcess  - InputParametros(urlConection=bn_sate/bn_sate@//10.7.12.177:1521/orades, pathFile=../../sate/data/TTPHAB_20241206_01_MEF.TXT, pathFileFail=../../sate/data/MEF_FAIL/TTPAUT_20241026_VAL_NN_BN.txt, typeProcess=2, typeProcessMC=)
+2024-12-16 16:00:17,324 INFO  pe.com.bn.Main.MainProcess  - Inicio del proceso con los parámetros proporcionados.
+2024-12-16 16:00:17,325 INFO  pe.com.bn.Main.MainProcess  - InputParametros(urlConection=bn_sate/bn_sate@//10.7.12.177:1521/orades, pathFile=../../sate/data/TTPHAB_20241206_01_MEF.TXT, pathFileFail=../../sate/data/MEF_FAIL/TTPAUT_20241026_VAL_01_BN.txt, typeProcess=2, typeProcessMC=)
+2024-12-16 16:00:17,936 INFO  pe.com.bn.service.CargaTxtService  - Tipo de proceso identificado: RPTA_MEF_TEMP
+2024-12-16 16:00:17,937 INFO  pe.com.bn.service.CargaTxtService  - Regitros: 3
+2024-12-16 16:00:17,937 INFO  pe.com.bn.service.CargaTxtService  - Fecha: 2024-12-06
+2024-12-16 16:00:18,124 INFO  pe.com.bn.Main.MainProcess  - Proceso completado exitosamente.
+2024-12-16 16:01:15,821 INFO  pe.com.bn.Main.MainProcess  - Parámetros validados correctamente.
+2024-12-16 16:01:15,822 INFO  pe.com.bn.Main.MainProcess  - InputParametros(urlConection=bn_sate/bn_sate@//10.7.12.177:1521/orades, pathFile=../../sate/data/TTPHAB_20241206_01_MEF.TXT, pathFileFail=../../sate/data/MEF_FAIL/TTPAUT_20241026_VAL_NN_BN.txt, typeProcess=2, typeProcessMC=)
+2024-12-16 16:01:15,822 INFO  pe.com.bn.Main.MainProcess  - Inicio del proceso con los parámetros proporcionados.
+2024-12-16 16:01:15,822 INFO  pe.com.bn.Main.MainProcess  - InputParametros(urlConection=bn_sate/bn_sate@//10.7.12.177:1521/orades, pathFile=../../sate/data/TTPHAB_20241206_01_MEF.TXT, pathFileFail=../../sate/data/MEF_FAIL/TTPAUT_20241026_VAL_01_BN.txt, typeProcess=2, typeProcessMC=)
+2024-12-16 16:01:16,382 INFO  pe.com.bn.service.CargaTxtService  - Tipo de proceso identificado: RPTA_MEF_TEMP
+2024-12-16 16:01:16,383 INFO  pe.com.bn.service.CargaTxtService  - Regitros: 3
+2024-12-16 16:01:16,383 INFO  pe.com.bn.service.CargaTxtService  - Fecha: 2024-12-06
+2024-12-16 16:01:16,561 INFO  pe.com.bn.Main.MainProcess  - Proceso completado exitosamente.
+2024-12-16 16:04:03,911 INFO  pe.com.bn.Main.MainProcess  - Parámetros validados correctamente.
+2024-12-16 16:04:03,912 INFO  pe.com.bn.Main.MainProcess  - InputParametros(urlConection=bn_sate/bn_sate@//10.7.12.177:1521/orades, pathFile=../../sate/data/TTPHAB_20241206_01_MEF.TXT, pathFileFail=../../sate/data/MEF_FAIL/TTPAUT_20241026_VAL_NN_BN.txt, typeProcess=2, typeProcessMC=)
+2024-12-16 16:04:03,912 INFO  pe.com.bn.Main.MainProcess  - Inicio del proceso con los parámetros proporcionados.
+2024-12-16 16:04:03,912 INFO  pe.com.bn.Main.MainProcess  - InputParametros(urlConection=bn_sate/bn_sate@//10.7.12.177:1521/orades, pathFile=../../sate/data/TTPHAB_20241206_01_MEF.TXT, pathFileFail=../../sate/data/MEF_FAIL/TTPAUT_20241026_VAL_01_BN.txt, typeProcess=2, typeProcessMC=)
+2024-12-16 16:04:04,534 INFO  pe.com.bn.service.CargaTxtService  - Tipo de proceso identificado: RPTA_MEF_TEMP
+2024-12-16 16:04:04,535 INFO  pe.com.bn.service.CargaTxtService  - Regitros: 3
+2024-12-16 16:04:04,535 INFO  pe.com.bn.service.CargaTxtService  - Fecha: 2024-12-06
+2024-12-16 16:04:04,707 INFO  pe.com.bn.Main.MainProcess  - Proceso completado exitosamente.
+2024-12-16 16:04:22,492 INFO  pe.com.bn.Main.MainProcess  - Parámetros validados correctamente.
+2024-12-16 16:04:22,492 INFO  pe.com.bn.Main.MainProcess  - InputParametros(urlConection=bn_sate/bn_sate@//10.7.12.177:1521/orades, pathFile=../../sate/data/TTPHAB_20241206_01_MEF.TXT, pathFileFail=../../sate/data/MEF_FAIL/TTPAUT_20241026_VAL_NN_BN.txt, typeProcess=2, typeProcessMC=)
+2024-12-16 16:04:22,492 INFO  pe.com.bn.Main.MainProcess  - Inicio del proceso con los parámetros proporcionados.
+2024-12-16 16:04:22,493 INFO  pe.com.bn.Main.MainProcess  - InputParametros(urlConection=bn_sate/bn_sate@//10.7.12.177:1521/orades, pathFile=../../sate/data/TTPHAB_20241206_01_MEF.TXT, pathFileFail=../../sate/data/MEF_FAIL/TTPAUT_20241026_VAL_01_BN.txt, typeProcess=2, typeProcessMC=)
+2024-12-16 16:04:23,045 INFO  pe.com.bn.service.CargaTxtService  - Tipo de proceso identificado: RPTA_MEF_TEMP
+2024-12-16 16:04:23,046 INFO  pe.com.bn.service.CargaTxtService  - Regitros: 3
+2024-12-16 16:04:23,046 INFO  pe.com.bn.service.CargaTxtService  - Fecha: 2024-12-06
+2024-12-16 16:04:23,236 INFO  pe.com.bn.Main.MainProcess  - Proceso completado exitosamente.
+2024-12-16 16:04:51,847 INFO  pe.com.bn.Main.MainProcess  - Parámetros validados correctamente.
+2024-12-16 16:04:51,847 INFO  pe.com.bn.Main.MainProcess  - InputParametros(urlConection=bn_sate/bn_sate@//10.7.12.177:1521/orades, pathFile=../../sate/data/TTPHAB_20241207_01_MEF.TXT, pathFileFail=../../sate/data/MEF_FAIL/TTPAUT_20241026_VAL_NN_BN.txt, typeProcess=2, typeProcessMC=)
+2024-12-16 16:04:51,848 INFO  pe.com.bn.Main.MainProcess  - Inicio del proceso con los parámetros proporcionados.
+2024-12-16 16:04:51,848 INFO  pe.com.bn.Main.MainProcess  - InputParametros(urlConection=bn_sate/bn_sate@//10.7.12.177:1521/orades, pathFile=../../sate/data/TTPHAB_20241207_01_MEF.TXT, pathFileFail=../../sate/data/MEF_FAIL/TTPAUT_20241026_VAL_01_BN.txt, typeProcess=2, typeProcessMC=)
+2024-12-16 16:04:52,477 INFO  pe.com.bn.service.CargaTxtService  - Tipo de proceso identificado: RPTA_MEF_TEMP
+2024-12-16 16:04:52,479 INFO  pe.com.bn.service.CargaTxtService  - Regitros: 3
+2024-12-16 16:04:52,479 INFO  pe.com.bn.service.CargaTxtService  - Fecha: 2024-12-06
+2024-12-16 16:04:52,675 INFO  pe.com.bn.Main.MainProcess  - Proceso completado exitosamente.
+2024-12-16 16:07:29,196 INFO  pe.com.bn.Main.MainProcess  - Parámetros validados correctamente.
+2024-12-16 16:07:29,197 INFO  pe.com.bn.Main.MainProcess  - InputParametros(urlConection=bn_sate/bn_sate@//10.7.12.177:1521/orades, pathFile=../../sate/data/TTPHAB_20241207_01_MEF.TXT, pathFileFail=../../sate/data/MEF_FAIL/TTPAUT_20241216_VAL_NN_BN.txt, typeProcess=2, typeProcessMC=)
+2024-12-16 16:07:29,197 INFO  pe.com.bn.Main.MainProcess  - Inicio del proceso con los parámetros proporcionados.
+2024-12-16 16:07:29,197 INFO  pe.com.bn.Main.MainProcess  - InputParametros(urlConection=bn_sate/bn_sate@//10.7.12.177:1521/orades, pathFile=../../sate/data/TTPHAB_20241207_01_MEF.TXT, pathFileFail=../../sate/data/MEF_FAIL/TTPAUT_20241216_VAL_01_BN.txt, typeProcess=2, typeProcessMC=)
+2024-12-16 16:07:29,756 INFO  pe.com.bn.service.CargaTxtService  - Tipo de proceso identificado: RPTA_MEF_TEMP
+2024-12-16 16:07:29,757 INFO  pe.com.bn.service.CargaTxtService  - Regitros: 3
+2024-12-16 16:07:29,757 INFO  pe.com.bn.service.CargaTxtService  - Fecha: 2024-12-06
+2024-12-16 16:07:29,925 INFO  pe.com.bn.Main.MainProcess  - Proceso completado exitosamente.

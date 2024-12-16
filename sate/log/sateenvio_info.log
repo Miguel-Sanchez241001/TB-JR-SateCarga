@@ -1,0 +1,70 @@
+2024-12-16 15:49:02,940 INFO  Main.MainProcess  - Iniciando ejecución con los siguientes parámetros:
+2024-12-16 15:49:02,941 INFO  Main.MainProcess  - Tipo de proceso: 1
+2024-12-16 15:49:02,941 INFO  Main.MainProcess  - Nombre del procedimiento: BN_SATE.BNPD_10_TRUNCAR_TEMP()
+2024-12-16 15:49:03,782 INFO  Main.MainProcess  - Procedimiento ejecutado correctamente: BN_SATE.BNPD_10_TRUNCAR_TEMP()
+2024-12-16 15:49:03,782 INFO  Main.MainProcess  - Procedimiento ejecutado sin capturar salida (tipo de proceso 1).
+2024-12-16 15:51:19,615 INFO  Main.MainProcess  - Iniciando ejecución con los siguientes parámetros:
+2024-12-16 15:51:19,616 INFO  Main.MainProcess  - Tipo de proceso: 1
+2024-12-16 15:51:19,616 INFO  Main.MainProcess  - Nombre del procedimiento: BN_SATE.BNPD_10_TRUNCAR_TEMP()
+2024-12-16 15:51:20,367 INFO  Main.MainProcess  - Procedimiento ejecutado correctamente: BN_SATE.BNPD_10_TRUNCAR_TEMP()
+2024-12-16 15:51:20,367 INFO  Main.MainProcess  - Procedimiento ejecutado sin capturar salida (tipo de proceso 1).
+2024-12-16 15:53:07,679 INFO  Main.MainProcess  - Iniciando ejecución con los siguientes parámetros:
+2024-12-16 15:53:07,680 INFO  Main.MainProcess  - Tipo de proceso: 1
+2024-12-16 15:53:07,680 INFO  Main.MainProcess  - Nombre del procedimiento: BN_SATE.BNPD_10_TRUNCAR_TEMP()
+2024-12-16 15:53:08,426 INFO  Main.MainProcess  - Procedimiento ejecutado correctamente: BN_SATE.BNPD_10_TRUNCAR_TEMP()
+2024-12-16 15:53:08,426 INFO  Main.MainProcess  - Procedimiento ejecutado sin capturar salida (tipo de proceso 1).
+2024-12-16 15:54:21,368 INFO  Main.MainProcess  - Iniciando ejecución con los siguientes parámetros:
+2024-12-16 15:54:21,369 INFO  Main.MainProcess  - Tipo de proceso: 1
+2024-12-16 15:54:21,369 INFO  Main.MainProcess  - Nombre del procedimiento: BN_SATE.BNPD_10_TRUNCAR_TEMP()
+2024-12-16 15:54:22,113 INFO  Main.MainProcess  - Procedimiento ejecutado correctamente: BN_SATE.BNPD_10_TRUNCAR_TEMP()
+2024-12-16 15:54:22,113 INFO  Main.MainProcess  - Procedimiento ejecutado sin capturar salida (tipo de proceso 1).
+2024-12-16 15:55:50,274 INFO  Main.MainProcess  - Iniciando ejecución con los siguientes parámetros:
+2024-12-16 15:55:50,275 INFO  Main.MainProcess  - Tipo de proceso: 1
+2024-12-16 15:55:50,275 INFO  Main.MainProcess  - Nombre del procedimiento: BN_SATE.BNPD_10_TRUNCAR_TEMP()
+2024-12-16 15:55:51,018 INFO  Main.MainProcess  - Procedimiento ejecutado correctamente: BN_SATE.BNPD_10_TRUNCAR_TEMP()
+2024-12-16 15:55:51,018 INFO  Main.MainProcess  - Procedimiento ejecutado sin capturar salida (tipo de proceso 1).
+2024-12-16 15:57:30,257 INFO  Main.MainProcess  - Iniciando ejecución con los siguientes parámetros:
+2024-12-16 15:57:30,258 INFO  Main.MainProcess  - Tipo de proceso: 1
+2024-12-16 15:57:30,258 INFO  Main.MainProcess  - Nombre del procedimiento: BN_SATE.BNPD_10_TRUNCAR_TEMP()
+2024-12-16 15:57:31,011 INFO  Main.MainProcess  - Procedimiento ejecutado correctamente: BN_SATE.BNPD_10_TRUNCAR_TEMP()
+2024-12-16 15:57:31,011 INFO  Main.MainProcess  - Procedimiento ejecutado sin capturar salida (tipo de proceso 1).
+2024-12-16 15:57:42,091 INFO  Main.MainProcess  - Iniciando ejecución con los siguientes parámetros:
+2024-12-16 15:57:42,091 INFO  Main.MainProcess  - Tipo de proceso: 1
+2024-12-16 15:57:42,092 INFO  Main.MainProcess  - Nombre del procedimiento: BN_SATE.BNPD_10_TRUNCAR_TEMP()
+2024-12-16 15:57:42,829 INFO  Main.MainProcess  - Procedimiento ejecutado correctamente: BN_SATE.BNPD_10_TRUNCAR_TEMP()
+2024-12-16 15:57:42,829 INFO  Main.MainProcess  - Procedimiento ejecutado sin capturar salida (tipo de proceso 1).
+2024-12-16 15:57:52,270 INFO  Main.MainProcess  - Iniciando ejecución con los siguientes parámetros:
+2024-12-16 15:57:52,271 INFO  Main.MainProcess  - Tipo de proceso: 1
+2024-12-16 15:57:52,271 INFO  Main.MainProcess  - Nombre del procedimiento: BN_SATE.BNPD_10_TRUNCAR_TEMP()
+2024-12-16 15:57:53,002 INFO  Main.MainProcess  - Procedimiento ejecutado correctamente: BN_SATE.BNPD_10_TRUNCAR_TEMP()
+2024-12-16 15:57:53,002 INFO  Main.MainProcess  - Procedimiento ejecutado sin capturar salida (tipo de proceso 1).
+2024-12-16 16:00:14,494 INFO  Main.MainProcess  - Iniciando ejecución con los siguientes parámetros:
+2024-12-16 16:00:14,495 INFO  Main.MainProcess  - Tipo de proceso: 1
+2024-12-16 16:00:14,495 INFO  Main.MainProcess  - Nombre del procedimiento: BN_SATE.BNPD_10_TRUNCAR_TEMP()
+2024-12-16 16:00:15,237 INFO  Main.MainProcess  - Procedimiento ejecutado correctamente: BN_SATE.BNPD_10_TRUNCAR_TEMP()
+2024-12-16 16:00:15,237 INFO  Main.MainProcess  - Procedimiento ejecutado sin capturar salida (tipo de proceso 1).
+2024-12-16 16:01:12,840 INFO  Main.MainProcess  - Iniciando ejecución con los siguientes parámetros:
+2024-12-16 16:01:12,841 INFO  Main.MainProcess  - Tipo de proceso: 1
+2024-12-16 16:01:12,841 INFO  Main.MainProcess  - Nombre del procedimiento: BN_SATE.BNPD_10_TRUNCAR_TEMP()
+2024-12-16 16:01:13,714 INFO  Main.MainProcess  - Procedimiento ejecutado correctamente: BN_SATE.BNPD_10_TRUNCAR_TEMP()
+2024-12-16 16:01:13,714 INFO  Main.MainProcess  - Procedimiento ejecutado sin capturar salida (tipo de proceso 1).
+2024-12-16 16:04:01,168 INFO  Main.MainProcess  - Iniciando ejecución con los siguientes parámetros:
+2024-12-16 16:04:01,169 INFO  Main.MainProcess  - Tipo de proceso: 1
+2024-12-16 16:04:01,169 INFO  Main.MainProcess  - Nombre del procedimiento: BN_SATE.BNPD_10_TRUNCAR_TEMP()
+2024-12-16 16:04:01,909 INFO  Main.MainProcess  - Procedimiento ejecutado correctamente: BN_SATE.BNPD_10_TRUNCAR_TEMP()
+2024-12-16 16:04:01,909 INFO  Main.MainProcess  - Procedimiento ejecutado sin capturar salida (tipo de proceso 1).
+2024-12-16 16:04:19,721 INFO  Main.MainProcess  - Iniciando ejecución con los siguientes parámetros:
+2024-12-16 16:04:19,722 INFO  Main.MainProcess  - Tipo de proceso: 1
+2024-12-16 16:04:19,722 INFO  Main.MainProcess  - Nombre del procedimiento: BN_SATE.BNPD_10_TRUNCAR_TEMP()
+2024-12-16 16:04:20,484 INFO  Main.MainProcess  - Procedimiento ejecutado correctamente: BN_SATE.BNPD_10_TRUNCAR_TEMP()
+2024-12-16 16:04:20,484 INFO  Main.MainProcess  - Procedimiento ejecutado sin capturar salida (tipo de proceso 1).
+2024-12-16 16:04:48,989 INFO  Main.MainProcess  - Iniciando ejecución con los siguientes parámetros:
+2024-12-16 16:04:48,990 INFO  Main.MainProcess  - Tipo de proceso: 1
+2024-12-16 16:04:48,990 INFO  Main.MainProcess  - Nombre del procedimiento: BN_SATE.BNPD_10_TRUNCAR_TEMP()
+2024-12-16 16:04:49,763 INFO  Main.MainProcess  - Procedimiento ejecutado correctamente: BN_SATE.BNPD_10_TRUNCAR_TEMP()
+2024-12-16 16:04:49,763 INFO  Main.MainProcess  - Procedimiento ejecutado sin capturar salida (tipo de proceso 1).
+2024-12-16 16:07:26,447 INFO  Main.MainProcess  - Iniciando ejecución con los siguientes parámetros:
+2024-12-16 16:07:26,448 INFO  Main.MainProcess  - Tipo de proceso: 1
+2024-12-16 16:07:26,448 INFO  Main.MainProcess  - Nombre del procedimiento: BN_SATE.BNPD_10_TRUNCAR_TEMP()
+2024-12-16 16:07:27,196 INFO  Main.MainProcess  - Procedimiento ejecutado correctamente: BN_SATE.BNPD_10_TRUNCAR_TEMP()
+2024-12-16 16:07:27,197 INFO  Main.MainProcess  - Procedimiento ejecutado sin capturar salida (tipo de proceso 1).

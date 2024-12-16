@@ -1,0 +1,30 @@
+
+
+# Comando Desarrollo
+
+sh prg_sate_main.sh bn_sate bn_sate 10.7.12.177 1521 ora ftp_sate 123456a. 10.7.12.93 7587 opercdni Op3rDn1. 10.7.106.195 22 "../.." 
+
+
+# Comando Calidad
+
+sh prg_sate_main.sh bn_sate bn_sate 10.7.106.32 4530 oracert bn-desa zaqw123'!' 10.7.12.20 22 opercdni Op3rDn1. 10.7.106.195 22 "../.."
+
+
+
+
+
+# Comando desa
+
+sh prg_sate_main.sh bn_sate bn_sate 10.7.12.177 1521 orades bn-desa zaqw123'!' 10.7.12.20 22 opercdni Op3rDn1. 10.7.106.195 22 "../.."
+
+
+
+
+
+
+
+
+
+
+
+
